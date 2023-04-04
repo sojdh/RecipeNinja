@@ -1,0 +1,159 @@
+*{
+	box-sizing: border-box;
+}
+html{
+	font-size: 10px;
+	display: block;
+}
+head{
+	display: none;
+}
+body{
+	background-color: #f8f8f8;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #333;
+	margin: 0;
+	display: block;
+}
+#Wrapper{
+	width: 100%;
+}
+.navbar{
+	position:relative;
+	min-height: 50px;
+	border: 1px solid transparent;
+	display: block;
+	padding: 0;
+}
+.navbar-default{
+	background-color: #f8f8f8;
+	border-color: #e7e7e7;
+}
+.navbar-static-top{
+	border-radius: 0;
+	z-index: 1000;
+	border-width: 0 0 1px;
+}
+.navbar-brand{
+	float: left;
+	height: 50px;
+	padding: 15px 15px;
+	font-size: 18px;
+	line-height: 20px;
+}
+.navbar-header{
+	float: left;
+}
+.navbar-default .navbar-brand{
+	color: #777;
+}
+a{
+	text-decoration: none;
+	background-color: transparent;
+	cursor: pointer;
+	color: #337ab7;
+}
+.navbar-top-links{
+	margin-right: 0;
+}
+.navbar-top-links
+.dropdown-user{
+	right: 0;
+	left: auto;
+}
+.dropdown-menu {
+    min-width: 160px;
+    float: left;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+}
+.dropdown-menu > li {
+    display: block;
+}
+.dropdown-menu > li > a {
+    display: block;
+    color: #333;
+}
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 9px 0;
+    background-color: #e5e5e5;
+}
+.navbar-top-links .dropdown-menu li a{
+	padding: 3px 20px;
+	min-height: 0;
+}
+.navbar-right {
+	float: right !important;
+}
+.nav {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	display: block;
+}
+.nav > li{
+	position: relative;
+	display: block;
+}
+.nav > li > a{
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+}
+ul, ol{
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+ul{
+	display: block;
+}
+.navbar-top-links li:last-child{
+	margin-right: 15px;
+}
+li{
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+.sidebar{
+	z-index: 1;
+	position: absolute;
+	width: 250px;
+	margin-top: 50px;
+}
+.sidebar .sidebar-nav .navbar-collapse{
+	padding-right: 0;
+	padding-left: 0;
+}
+.sidebar .arrow{
+	float: right;
+}
+.sidebar ul li{
+	border-bottom: 1px solid #e7e7e7;
+}
+.sidebar ul li a.active{
+	background-color: #eee;
+}
+
+#page-wrapper{
+	position: inherit;
+	margin: 0 0 0 250px;
+	padding: 0 30px;
+	border-left: 1px solid #e7e7e7;
+}
+.navbar-collapse{
+	width: auto;
+	border-top: 0;
+	box-shadow: none;
+}
+.collapse.in{
+	display: block;
+	visibility: visible;
+}
+.collapse{
+	display: none;
+	visibility: hidden;
+}
