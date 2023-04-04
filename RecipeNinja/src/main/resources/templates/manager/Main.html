@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>관리자 페이지</title>
+<!-- Bootstrap Core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/d389720e5d.js" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/manager/Main.css">
+</head>
+<body>    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div id="wrapper">
+
+        <!-- Navigation -->
+		        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="ManagerLogin.html">Administrator</a>
+            </div>
+            
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+				<!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="/" target="blank">
+                        <i class="fa fa-home fa-fw">
+                        </i> HOME</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="ManagerLogin.html">
+                        <i class="fa fa-sign-out fa-fw">
+                        </i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class>
+                            <a href="#" class="active">
+                            <i class="fa fa-gear fa-fw"></i> 
+                            기본정보
+                            <span class="fa arrow"></span>
+                            </a>
+                            <ul class="nav nav-second-level collapse in">
+                                <li>
+                                    <a href="#">기본정보 관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">관리자정보 관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">회원 관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">탈퇴회원 관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">메인배너 관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">상단배너 관리</a>
+                                </li>
+                                <li>
+                                    <a href="">팝업 관리</a>
+                                </li>
+                                <li>
+                                    <a href="">폰트테스트</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> 주문/견적 관리<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="main.php?pagecode=order&amp;subpage=order">주문 관리<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="">전체 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="">상담 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="">결제 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="">제품제작 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="">디자인시안</a>
+                                        </li>
+                                        <li>
+                                            <a href="">인쇄 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="">배송 관리</a>
+                                        </li>
+                                        <!-- <li>
+                                            <a href="main.php?pagecode=order&subpage=order_test&sort=all">TEST</a>
+                                        </li> -->
+                                   </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=order&amp;subpage=estimate">견적 관리</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=order&amp;subpage=cart">장바구니 관리</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="fa fa-pen-to-square fa-fw"></i> 
+                            게시판 관리
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level  collapse">
+                                <li>
+                                    <a href="main.php?pagecode=board&amp;subpage=conf">게시판 설정</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=board&amp;subpage=board&amp;b_class=1">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=board&amp;subpage=board&amp;b_class=2">자주 묻는 질문</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=board&amp;subpage=board&amp;b_class=3">납품사례</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=board&amp;subpage=board&amp;b_class=4">포토후기</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=board&amp;subpage=board&amp;b_class=5">이벤트</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> 제품관리<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="main.php?pagecode=products&amp;subpage=category">카테고리관리</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=products&amp;subpage=products_all">전체검색관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">조끼 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007004&amp;catenum1=7&amp;catenum2=38">1. 망사 (여름)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007001&amp;catenum1=7&amp;catenum2=35">2. 일반 V 넥</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007002&amp;catenum1=7&amp;catenum2=36">3. 카라 (행사) 용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007009&amp;catenum1=7&amp;catenum2=241">4. 초경량</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007003&amp;catenum1=7&amp;catenum2=37">5. 안전/도우미/특수용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007006&amp;catenum1=7&amp;catenum2=40">6. 아동용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007007&amp;catenum1=7&amp;catenum2=134">7. 팀조끼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007008&amp;catenum1=7&amp;catenum2=167">8. 골프캐디</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=007005&amp;catenum1=7&amp;catenum2=39">9. 겨울 조끼</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">모자 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008001&amp;catenum1=8&amp;catenum2=41">1. 캡모자 (행사)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008005&amp;catenum1=8&amp;catenum2=45">2. 일반행사</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008002&amp;catenum1=8&amp;catenum2=42">3. 고급레져 (행사)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008003&amp;catenum1=8&amp;catenum2=43">4. 아웃도어 (정글모)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008004&amp;catenum1=8&amp;catenum2=44">5. 스냅백</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008009&amp;catenum1=8&amp;catenum2=174">6. 군모</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008006&amp;catenum1=8&amp;catenum2=46">7. 아동용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008007&amp;catenum1=8&amp;catenum2=47">8. 여름용 ( 썬캡 / 바이저 )</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008012&amp;catenum1=8&amp;catenum2=266">9. 치마모자</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008010&amp;catenum1=8&amp;catenum2=224">10. 방한모</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008008&amp;catenum1=8&amp;catenum2=172">11. 비니모자</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=008011&amp;catenum1=8&amp;catenum2=227">12. 헌팅캡</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">근무복/작업복 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006005&amp;catenum1=6&amp;catenum2=155">1. 동계 근무복 / 작업복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006004&amp;catenum1=6&amp;catenum2=154">2. 동계 작업복 세트</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006007&amp;catenum1=6&amp;catenum2=160">3. 동계 바지</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006002&amp;catenum1=6&amp;catenum2=152">4. 동계 정비복  스즈끼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006009&amp;catenum1=6&amp;catenum2=162">5. 춘하 근무복/작업복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006003&amp;catenum1=6&amp;catenum2=153">6. 춘하 작업복 세트</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006008&amp;catenum1=6&amp;catenum2=161">7. 춘하 바지</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006013&amp;catenum1=6&amp;catenum2=170">8. 사계절 근무복/작업복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006010&amp;catenum1=6&amp;catenum2=163">9. 사계절 작업복 세트</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006012&amp;catenum1=6&amp;catenum2=165">10. 사계절 바지</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006011&amp;catenum1=6&amp;catenum2=164">9. 사계절 정비복 스즈끼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=006006&amp;catenum1=6&amp;catenum2=156">12. 경비복</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">라운드티 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001002&amp;catenum1=1&amp;catenum2=15">면  -  반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001004&amp;catenum1=1&amp;catenum2=17">쿨론 (기능성)  - 반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001005&amp;catenum1=1&amp;catenum2=92">면  -  긴팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001006&amp;catenum1=1&amp;catenum2=98">쿨론 (기능성) - 긴팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001007&amp;catenum1=1&amp;catenum2=101">민소매 / 나시</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001008&amp;catenum1=1&amp;catenum2=159">여성용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001009&amp;catenum1=1&amp;catenum2=233">아동용 라운드 반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=001011&amp;catenum1=1&amp;catenum2=235">아동용 라운드 긴팔</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">폴로티 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002002&amp;catenum1=2&amp;catenum2=88">1. 쿨론 (기능성) - 반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002006&amp;catenum1=2&amp;catenum2=93">3.  면 - 반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002004&amp;catenum1=2&amp;catenum2=90">2.  쿨론 (기능성) - 긴팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002007&amp;catenum1=2&amp;catenum2=94">4. 면 - 긴팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002008&amp;catenum1=2&amp;catenum2=95">5.  차이나 (아웃도어)  -  반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002009&amp;catenum1=2&amp;catenum2=96">6.  차이나 (아웃도어)  -  긴팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002010&amp;catenum1=2&amp;catenum2=97">7.  여성용  -  반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002011&amp;catenum1=2&amp;catenum2=99">8.  여성용 - 긴팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002012&amp;catenum1=2&amp;catenum2=100">9.  겨울용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002013&amp;catenum1=2&amp;catenum2=237">10. 아동용 폴로 반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=002014&amp;catenum1=2&amp;catenum2=238">11. 아동용 폴로 긴팔</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">아동티 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=003001&amp;catenum1=3&amp;catenum2=20">1. 라운드 반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=003002&amp;catenum1=3&amp;catenum2=21">2. 폴로 반팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=003003&amp;catenum1=3&amp;catenum2=22">3. 라운드 긴팔</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=003004&amp;catenum1=3&amp;catenum2=23">4. 폴로 긴팔</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">후드/맨투맨 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=004001&amp;catenum1=4&amp;catenum2=26">1. 후드 T</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=004002&amp;catenum1=4&amp;catenum2=27">2. 후드 T  - 지퍼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=004003&amp;catenum1=4&amp;catenum2=28">3. 맨투맨 (특양면 라운드)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=004004&amp;catenum1=4&amp;catenum2=102">4. 아동용 후드 T</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=004005&amp;catenum1=4&amp;catenum2=103">5. 아동용 맨투맨 T</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">바람막이/점퍼 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=005001&amp;catenum1=5&amp;catenum2=29">1. 바람막이</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=005002&amp;catenum1=5&amp;catenum2=30">2. 쟈켓 (아웃도어)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=005005&amp;catenum1=5&amp;catenum2=33">3. 야구점퍼 (특양면)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=005006&amp;catenum1=5&amp;catenum2=158">4. 항공점퍼</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">겨울/패딩 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012001&amp;catenum1=12&amp;catenum2=73">0. 폴라폴리스 / 보아털</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012010&amp;catenum1=12&amp;catenum2=216">1. 롱패딩</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012002&amp;catenum1=12&amp;catenum2=74">2. 패딩</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012007&amp;catenum1=12&amp;catenum2=166">3. 오리털</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012009&amp;catenum1=12&amp;catenum2=173">4. 방한복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012004&amp;catenum1=12&amp;catenum2=149">5. 항공점퍼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012006&amp;catenum1=12&amp;catenum2=157">6. 조끼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012008&amp;catenum1=12&amp;catenum2=169">7. 겨울바지</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=012005&amp;catenum1=12&amp;catenum2=150">8. 스키복 자켓 &amp; 후드 &amp; 바지</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">축구유니폼 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=010017&amp;catenum1=10&amp;catenum2=177">카파</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=010022&amp;catenum1=10&amp;catenum2=225">승화전사 유니폼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=010019&amp;catenum1=10&amp;catenum2=191">팀조끼 / 스타킹 / 기타용품</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">스포츠유니폼 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011006&amp;catenum1=11&amp;catenum2=217">0. 츄리닝(트레이닝복)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011011&amp;catenum1=11&amp;catenum2=240">1-1. 축구 (카파)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011010&amp;catenum1=11&amp;catenum2=239">1-2. 축구 (승화전사유니폼)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011001&amp;catenum1=11&amp;catenum2=67">2. 농구</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011002&amp;catenum1=11&amp;catenum2=68">3. 육상</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011005&amp;catenum1=11&amp;catenum2=208">4. 야구</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011007&amp;catenum1=11&amp;catenum2=218">5. 배구복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011008&amp;catenum1=11&amp;catenum2=229">6. 긴바지</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=011009&amp;catenum1=11&amp;catenum2=230">7. 반바지</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">앞치마/주방 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013001&amp;catenum1=13&amp;catenum2=80">미니허리형</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013002&amp;catenum1=13&amp;catenum2=135">허리감기형</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013003&amp;catenum1=13&amp;catenum2=136">주방 허리형</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013004&amp;catenum1=13&amp;catenum2=137">H형</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013005&amp;catenum1=13&amp;catenum2=138">X형</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013006&amp;catenum1=13&amp;catenum2=139">원피스(랩)형</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013007&amp;catenum1=13&amp;catenum2=140">목걸이형</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013008&amp;catenum1=13&amp;catenum2=141">방수 / 우레탄</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013009&amp;catenum1=13&amp;catenum2=142">손님용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013010&amp;catenum1=13&amp;catenum2=143">모자</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013011&amp;catenum1=13&amp;catenum2=144">조리복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013012&amp;catenum1=13&amp;catenum2=145">위생복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013013&amp;catenum1=13&amp;catenum2=146">서빙복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013016&amp;catenum1=13&amp;catenum2=179">가디건</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013014&amp;catenum1=13&amp;catenum2=147">아동용</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=013015&amp;catenum1=13&amp;catenum2=178">주방타이</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">주문제작 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015001&amp;catenum1=105&amp;catenum2=106">라운드 T</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015002&amp;catenum1=105&amp;catenum2=121">폴로 T</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015003&amp;catenum1=105&amp;catenum2=122">아동 T</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015004&amp;catenum1=105&amp;catenum2=123">후드 / 맨투맨</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015005&amp;catenum1=105&amp;catenum2=124">점퍼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015006&amp;catenum1=105&amp;catenum2=125">근무복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015007&amp;catenum1=105&amp;catenum2=126">모자</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015008&amp;catenum1=105&amp;catenum2=127">조끼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015009&amp;catenum1=105&amp;catenum2=128">트레이닝복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015010&amp;catenum1=105&amp;catenum2=129">축구유니폼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015011&amp;catenum1=105&amp;catenum2=130">스포츠유니폼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015012&amp;catenum1=105&amp;catenum2=131">폴라포리스 / 패딩</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015013&amp;catenum1=105&amp;catenum2=132">앞치마</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=015014&amp;catenum1=105&amp;catenum2=133">기타</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">헬스/찜질복 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016007&amp;catenum1=180&amp;catenum2=187">찜질복 (SET)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016008&amp;catenum1=180&amp;catenum2=188">찜질복 (상의)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016009&amp;catenum1=180&amp;catenum2=189">찜질복 (바지)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016016&amp;catenum1=180&amp;catenum2=211">마사지복 (SET)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016017&amp;catenum1=180&amp;catenum2=212">마사지복 (상의)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016018&amp;catenum1=180&amp;catenum2=213">마사지복 (하의)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016012&amp;catenum1=180&amp;catenum2=199">헬스복 셋트(면)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016001&amp;catenum1=180&amp;catenum2=181">헬스복 셋트(기능성)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016013&amp;catenum1=180&amp;catenum2=201">헬스복 상의(면)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016002&amp;catenum1=180&amp;catenum2=182">헬스복 상의(기능성)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016003&amp;catenum1=180&amp;catenum2=183">헬스복 (바지)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016010&amp;catenum1=180&amp;catenum2=193">타올</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016004&amp;catenum1=180&amp;catenum2=184">헬스 이너웨어 셋트</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016005&amp;catenum1=180&amp;catenum2=185">헬스 이너웨어 상의</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016006&amp;catenum1=180&amp;catenum2=186">헬스 이너웨어 하의</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016011&amp;catenum1=180&amp;catenum2=194">가방 / 양말</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016014&amp;catenum1=180&amp;catenum2=202">기타 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=016015&amp;catenum1=180&amp;catenum2=203">기타 2</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">교회/성당 T <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=017001&amp;catenum1=209&amp;catenum2=210">교회/성당 T</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">가족티 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=018001&amp;catenum1=231&amp;catenum2=232">가족티</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">STAFF 유니폼 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=019005&amp;catenum1=256&amp;catenum2=261">1.조끼</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=019004&amp;catenum1=256&amp;catenum2=260">2.티셔츠</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=019003&amp;catenum1=256&amp;catenum2=259">3.바람막이</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=019002&amp;catenum1=256&amp;catenum2=258">4.모자</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=019001&amp;catenum1=256&amp;catenum2=257">5.후드티 | 맨투맨</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">선거의류 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=014008&amp;catenum1=104&amp;catenum2=223">조합장 선거복</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=014001&amp;catenum1=104&amp;catenum2=107">국민의힘(미래통합당)</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=014002&amp;catenum1=104&amp;catenum2=108">더불어민주당</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=014004&amp;catenum1=104&amp;catenum2=110">정의당</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=products&amp;subpage=products&amp;c_num=014005&amp;catenum1=104&amp;catenum2=111">무소속</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-image fa-fw"></i> 클립아트<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="main.php?pagecode=clipart&amp;subpage=category">카테고리관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">전체분류 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002005&amp;catenum1=11&amp;catenum2=16">동물</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002022&amp;catenum1=11&amp;catenum2=33">해골 / 호러 / 할로윈</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002010&amp;catenum1=11&amp;catenum2=21">생일 / 이벤트 / 크리스마스</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002027&amp;catenum1=11&amp;catenum2=40">축제 / 카니발</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002026&amp;catenum1=11&amp;catenum2=37">낚시</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002017&amp;catenum1=11&amp;catenum2=28">종교</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002007&amp;catenum1=11&amp;catenum2=18">문양 / 상징 / 무늬 / 왕관</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002024&amp;catenum1=11&amp;catenum2=35">물고기 바다</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002008&amp;catenum1=11&amp;catenum2=19">배 / 자동차 / 비행기 교통수단</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002009&amp;catenum1=11&amp;catenum2=20">사랑 / 커플 / 가족</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002003&amp;catenum1=11&amp;catenum2=14">국기</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002011&amp;catenum1=11&amp;catenum2=22">스포츠게임 / 운동</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002025&amp;catenum1=11&amp;catenum2=36">새</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002012&amp;catenum1=11&amp;catenum2=23">엠블럼 / 로고</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002006&amp;catenum1=11&amp;catenum2=17">아이콘</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002013&amp;catenum1=11&amp;catenum2=24">우주</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002014&amp;catenum1=11&amp;catenum2=25">음식 / 과일</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002015&amp;catenum1=11&amp;catenum2=26">음악 / 악기</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002016&amp;catenum1=11&amp;catenum2=27">자연 / 식물 / 꽃</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002019&amp;catenum1=11&amp;catenum2=30">타투</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002021&amp;catenum1=11&amp;catenum2=32">표정 /  손 / 콧수염 / 안경</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002023&amp;catenum1=11&amp;catenum2=34">힙합 / 댄스</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002002&amp;catenum1=11&amp;catenum2=13">곤충</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart&amp;subpage=clipart&amp;c_num=002004&amp;catenum1=11&amp;catenum2=15">군대 / 무기 / 군인</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-image fa-fw"></i> 클립아트 갤러리<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="#">전체분류 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002005&amp;catenum1=11&amp;catenum2=16">동물</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002022&amp;catenum1=11&amp;catenum2=33">해골 / 호러 / 할로윈</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002010&amp;catenum1=11&amp;catenum2=21">생일 / 이벤트 / 크리스마스</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002027&amp;catenum1=11&amp;catenum2=40">축제 / 카니발</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002026&amp;catenum1=11&amp;catenum2=37">낚시</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002017&amp;catenum1=11&amp;catenum2=28">종교</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002007&amp;catenum1=11&amp;catenum2=18">문양 / 상징 / 무늬 / 왕관</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002024&amp;catenum1=11&amp;catenum2=35">물고기 바다</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002008&amp;catenum1=11&amp;catenum2=19">배 / 자동차 / 비행기 교통수단</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002009&amp;catenum1=11&amp;catenum2=20">사랑 / 커플 / 가족</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002003&amp;catenum1=11&amp;catenum2=14">국기</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002011&amp;catenum1=11&amp;catenum2=22">스포츠게임 / 운동</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002025&amp;catenum1=11&amp;catenum2=36">새</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002012&amp;catenum1=11&amp;catenum2=23">엠블럼 / 로고</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002006&amp;catenum1=11&amp;catenum2=17">아이콘</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002013&amp;catenum1=11&amp;catenum2=24">우주</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002014&amp;catenum1=11&amp;catenum2=25">음식 / 과일</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002015&amp;catenum1=11&amp;catenum2=26">음악 / 악기</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002016&amp;catenum1=11&amp;catenum2=27">자연 / 식물 / 꽃</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002019&amp;catenum1=11&amp;catenum2=30">타투</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002021&amp;catenum1=11&amp;catenum2=32">표정 /  손 / 콧수염 / 안경</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002023&amp;catenum1=11&amp;catenum2=34">힙합 / 댄스</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002002&amp;catenum1=11&amp;catenum2=13">곤충</a>
+                                        </li>
+                                        <li>
+                                            <a href="main.php?pagecode=clipart_gallery&amp;subpage=clipart_gallery&amp;c_num=002004&amp;catenum1=11&amp;catenum2=15">군대 / 무기 / 군인</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> 적립/기부금 관리<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="main.php?pagecode=point&amp;subpage=point">적립금 관리</a>
+                                </li>
+                                <li>
+                                    <a href="main.php?pagecode=point&amp;subpage=donation">기부금 관리</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+    	
+
+        <!-- Page Content -->
+        <div id="page-wrapper" style="min-height: 868px;">
+			<!-- /.row (내용자리)-->
+			            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">기본정보 관리</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+							<form role="form" name="f" method="post" enctype="multipart/form-data" action="/admin/main.php">
+							<input type="hidden" name="pagecode" value="basic">
+							<input type="hidden" name="subpage" value="basic_info">
+							<input type="hidden" name="mode" value="MODIFY_ACTION">
+								<div class="form-group">
+									<label for="b_title">홈페이지 타이틀</label>
+									<input type="text" class="form-control {label:'홈페이지 타이틀',required:true}" id="b_title" name="b_title" placeholder="홈페이지 타이틀" value="리드웨어  (루피코리아) 홈페이지">
+								</div>
+								<div class="form-group">
+									<label for="b_email">대표 E-mail</label>
+									<input type="email" class="form-control {label:'대표 E-mail',required:true}" id="b_email" name="b_email" placeholder="E-mail" value="LW5447@naver.com">
+								</div>
+								<div class="form-group">
+									<label for="smtp_mail_pw">SMTP 비밀번호</label>
+									<input type="password" class="form-control {label:'SMTP 비밀번호',required:true}" id="smtp_mail_pw" name="smtp_mail_pw" placeholder="SMTP 비밀번호" value="eoqkr990715">
+								</div>
+								<button type="submit" class="btn btn-outline btn-success">수정</button>
+								<!-- <button type="button" class="btn btn-outline btn-info" onclick="go_url('?pagecode=basic&subpage=basic_info&mode=VIEW_FORM');">취소</a></button> -->
+							</form>
+								
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+    <!-- jQuery -->
+    <script src="/admin/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+	<script src="/admin/js/jquery.number.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/admin/dist/js/sb-admin-2.js?1680522172"></script>
+	<script type="text/javascript" src="/admin/js/jquery.ESvalidator.js"></script>
+
+
+
+
+</body>
+</html>
