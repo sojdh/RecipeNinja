@@ -14,15 +14,20 @@
             <h3 class="panel-title">Please Sign In</h3>
           </div>
           <div class="panel-body">
-            <filedset>
-              <div class="login-form">
-                <input class = "form-control" type="form" placeholder="ID"/>
-              </div>
-              <div class="login-form">
-                <input class = "form-control" type="Password"    placeholder="password"/>
-              </div>
-              <button type="submit" class="btn btn-lg btn-success btn-block">login</button>
-            </filedset>
+          	<form role="form" id="login_form" action="./ManagerLogin.html">
+          		<input type="hidden" name="mode" value="LOGIN_ACTION">
+          		<input type="hidden" name="return_url" value="ManagerLogin.html">
+	            <filedset>
+	              <div class="form-group">
+	                <input class = "form-control" name="user_id" type="text" placeholder="ID" autofocus>
+	              </div>
+	              <div class="login-form">
+	                <input class = "form-control" type="Password"    placeholder="password"/>
+	              </div>
+	              <script type="text/javascript"> function login() {location.href="ManagerLogin"}</script>
+	              <button type="submit" onclick="login" class="btn btn-lg btn-success btn-block">login</button>
+	            </filedset>
+            </form>
           </div>
         </div>
       </div>

@@ -124,7 +124,7 @@ li{
 	width: 250px;
 	margin-top: 50px;
 }
-.sidebar .sidebar-nav .navbar-collapse{
+.sidebar .sidebar-nav{
 	padding-right: 0;
 	padding-left: 0;
 }
@@ -134,26 +134,73 @@ li{
 .sidebar ul li{
 	border-bottom: 1px solid #e7e7e7;
 }
-.sidebar ul li a.active{
-	background-color: #eee;
-}
-
 #page-wrapper{
 	position: inherit;
 	margin: 0 0 0 250px;
 	padding: 0 30px;
 	border-left: 1px solid #e7e7e7;
+	background-color: #fff;
 }
-.navbar-collapse{
-	width: auto;
-	border-top: 0;
-	box-shadow: none;
+.sidebar ul li a.active{
+	background-color: #eee;
 }
-.collapse.in{
-	display: block;
-	visibility: visible;
+
+/* 확장 아이콘 */
+.sidebar-nav > .nav > li > a > .fa.arrow:before {
+  content: "\f107";
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
 }
-.collapse{
-	display: none;
-	visibility: hidden;
+
+/* 아이콘 확장 */
+.sidebar-nav > .nav > li > a > .fa.arrow:before {
+  transform: rotate(90deg);
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    display: block;
+}
+.row:before{
+	display: table;
+	content: " ";
+}
+.row:after{
+	display: table;
+	content: " ";
+}
+h1 {
+    font-size: 36px;
+}
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel-body {
+    padding: 15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-control{
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+}
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    max-width: 100%;
+    font-weight: bold;
 }
