@@ -7,12 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-public class ManagerController {
+	@Controller
+	public class ManagerController {
+		@RequestMapping("Manager")
+		public ModelAndView manager() {
+			return new ModelAndView("manager/ManagerLogin");
+		}
 
-	@RequestMapping("Manager")
-	public ModelAndView manager() {
-		return new ModelAndView("manager/Main");
-
+	@Controller
+	public class MainController {
+		@RequestMapping("ManagerLogin")
+		public ModelAndView managerlogin() {
+			return new ModelAndView("manager/Main");
+		}
 	}
 }
