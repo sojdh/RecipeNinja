@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 		public ModelAndView managerlogin() {
 			return new ModelAndView("manager/ManagerLogin");
 		}
-
+		
 	@Controller
 	public class ManagerLoginController {
 		@RequestMapping("ManagerMain")
