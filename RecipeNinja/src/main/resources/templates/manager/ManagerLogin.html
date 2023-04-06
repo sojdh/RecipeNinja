@@ -5,6 +5,13 @@
 <title>관리자 로그인</title>
 <link rel="stylesheet" href="css/manager/Manager.css">
 </head>
+
+<script type="text/javascript">
+	function login() {
+		location.href="ManagerMain";
+	}
+</script>
+	              
 <body>
   <div class="container">
     <div class="row">
@@ -24,8 +31,7 @@
 	              <div class="login-form">
 	                <input class = "form-control" type="Password"    placeholder="password"/>
 	              </div>
-	              <script type="text/javascript"> function login() {location.href="ManagerLogin"}</script>
-	              <button type="submit" onclick="login" class="btn btn-lg btn-success btn-block">login</button>
+	              <button type="button" onclick="login()" class="btn btn-lg btn-success btn-block">login</button>
 	            </filedset>
             </form>
           </div>
