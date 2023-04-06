@@ -9,16 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 	@Controller
 	public class ManagerController {
-		@RequestMapping("Manager")
-		public ModelAndView manager() {
-			return new ModelAndView("manager/ManagerLogin");
-		}
-
-	@Controller
-	public class MainController {
 		@RequestMapping("ManagerLogin")
 		public ModelAndView managerlogin() {
-			return new ModelAndView("manager/Main");
+			return new ModelAndView("manager/ManagerLogin");
+		}
+		
+	@Controller
+	public class ManagerLoginController {
+		@RequestMapping("ManagerMain")
+		public ModelAndView managermain() {
+			return new ModelAndView("manager/ManagerMain");
 		}
 	}
 }
