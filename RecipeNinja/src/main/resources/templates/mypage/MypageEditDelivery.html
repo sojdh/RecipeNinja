@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mypage Main</title>
-	<link rel="stylesheet" href="css/mypage/MypageMain.css">
+	<link rel="stylesheet" href="css/mypage/MypageEditDelivery.css">
 	<!-- Font Awesome CDN 로드 -->
 	<script src="https://kit.fontawesome.com/d389720e5d.js" crossorigin="anonymous"></script>
 
@@ -123,9 +123,10 @@
 											<li id="order-list-page" class="menu-9 selected"><a href="/MypageProductOrderList"
 													title="주문목록/배송조회" target="_self" class="menu-10">주문목록/배송조회<span
 														class="menu-11"></span></a></li>
-											<li id="mc-cancel-return-page" class="menu-9"><a href="/MypageProductCancelReturnExchange"
-													title="취소/반품/교환/환불내역" target="_self"
-													class="menu-10">취소/반품/교환/환불내역<span class="menu-11"></span></a></li>
+											<li id="mc-cancel-return-page" class="menu-9"><a
+													href="/MypageProductCancelReturnExchange" title="취소/반품/교환/환불내역"
+													target="_self" class="menu-10">취소/반품/교환/환불내역<span
+														class="menu-11"></span></a></li>
 											<li id="mc-product-like-list" class="menu-9"><a href="/MypageProductLike"
 													title="상품 찜 리스트" target="_self" class="menu-10">상품 찜 리스트<span
 														class="menu-11"></span></a></li>
@@ -142,8 +143,8 @@
 											<li id="mc-pay-page" class="menu-9"><a href="/MypageNinjaPay" title="결제수단관리"
 													target="_self" class="menu-10">결제수단관리<span
 														class="menu-11"></span></a></li>
-											<li id="mc-address-book-page" class="menu-9"><a href="/MypageDelivery" title="배송지 관리"
-													target="_self" class="menu-10">배송지 관리<span
+											<li id="mc-address-book-page" class="menu-9"><a href="/MypageDelivery"
+													title="배송지 관리" target="_self" class="menu-10">배송지 관리<span
 														class="menu-11"></span></a></li>
 											<li id="mc-Grade-benefits" class="menu-9"><a href="/MypageMembership"
 													title="등급혜택" target="_self" class="menu-10">등급혜택<span
@@ -220,6 +221,33 @@
 							</ul>
 						</div>
 						<div class="mypage-area-contents dHwqA-d">
+							<h1 class="edit-delivery-title">배송지 정보 수정</h1>
+							<div class="edit-delivery-container">
+								<form action="/save_delivery" method="POST">
+									<div class="edit-delivery-info-container">
+										<div class="edit-delivery-info">
+											<h4>이름</h4>
+											<input type="text" name="name" value="김민석">
+										</div>
+										<div class="edit-delivery-info">
+											<h4>배송지 주소</h4>
+											<input type="text" name="address" value="서울특별시 강남구 역삼동 123-45">
+										</div>
+										<div class="edit-delivery-info">
+											<h4>휴대폰 번호</h4>
+											<input type="text" name="phone" value="010-1234-5678">
+										</div>
+										<div class="edit-delivery-info">
+											<h4>배송 요청 사항</h4>
+											<input type="text" name="delivery_request" value="부재시 경비실에 맡겨주세요.">
+										</div>
+									</div>
+									<div class="edit-delivery-buttons">
+										<button type="submit" class="save-button">저장</button>
+										<button type="button" class="delete-button">삭제</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
