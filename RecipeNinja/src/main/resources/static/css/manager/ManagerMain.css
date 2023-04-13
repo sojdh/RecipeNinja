@@ -19,6 +19,9 @@ body{
 #Wrapper{
 	width: 100%;
 }
+#page-wrapper {
+  min-height: 100vh;
+}
 .navbar{
 	position:relative;
 	min-height: 50px;
@@ -49,13 +52,18 @@ body{
 	color: #777;
 }
 a{
+	color: #337ab7;
 	text-decoration: none;
 	background-color: transparent;
-	cursor: pointer;
-	color: #337ab7;
+}
+.sidebar-nav a:hover{
+	background: #e5e5e5;
 }
 .navbar-top-links{
 	margin-right: 0;
+}
+.dropdown > a{
+	text-decoration: none;
 }
 .navbar-top-links
 .dropdown-user{
@@ -73,9 +81,13 @@ a{
 .dropdown-menu > li {
     display: block;
 }
-.dropdown-menu > li > a {
+.dropdown-menu > li > a{
+	text-decoration: none;
     display: block;
     color: #333;
+}
+.dropdown-menu > li > a:hover {
+    background-color: #ddd;
 }
 .dropdown-menu .divider {
     height: 1px;
@@ -111,9 +123,6 @@ ul, ol{
 ul{
 	display: block;
 }
-.navbar-top-links li:last-child{
-	margin-right: 15px;
-}
 li{
 	display: list-item;
 	text-align: -webkit-match-parent;
@@ -146,7 +155,7 @@ li{
 }
 
 /* 확장 아이콘 */
-.sidebar-nav > .nav > li > a > .fa.arrow:before {
+.sidebar-nav a > .fa.arrow:before {
   content: "\f107";
   display: inline-block;
   transition: transform 0.3s ease-in-out;
@@ -169,6 +178,7 @@ li{
 .row:after{
 	display: table;
 	content: " ";
+	clear: both;
 }
 h1 {
     font-size: 36px;
@@ -190,17 +200,14 @@ h1 {
 .panel-body {
     padding: 15px;
 }
-.form-group {
-    margin-bottom: 15px;
+.panel-body:before{
+	display: table;
+	content: " ";
 }
-.form-control{
-	height: 34px;
-	padding: 6px 12px;
-	font-size: 14px;
+.panel-body:after{
+	display: table;
+	content: " ";
 }
-label {
-    display: inline-block;
-    margin-bottom: 5px;
-    max-width: 100%;
-    font-weight: bold;
+.btn-primary.btn-outline{
+	color: #428bca;
 }
