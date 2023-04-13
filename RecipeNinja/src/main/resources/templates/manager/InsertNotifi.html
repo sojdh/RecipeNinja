@@ -20,8 +20,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="css/manager/ManagerMain.css">
+<link rel="stylesheet" href="css/manager/Form.css">
 
-</script>
 </head>
 
 <body> 
@@ -63,13 +63,13 @@
                     <ul class="nav" id="side-menu">
                     	<!-- 기본정보 -->
                         <li>
-                            <a data-toggle="collapse" href="#basic-info-menu" class="active">
+                            <a data-toggle="collapse" href="#basic-info-menu">
                             <i class="fa fa-gear fa-fw"></i> 
                             기본정보
                             <span class="fa arrow"></span>
                             </a>
-                            <ul class="nav nav-second-level collapse show" id="basic-info-menu">
-                                <li><a href="ManagerMain" class="active">관리자정보 관리</a></li>
+                            <ul class="nav nav-second-level collapse" id="basic-info-menu">
+                                <li><a href="ManagerMain">관리자정보 관리</a></li>
                                 <li><a href="MemberMain">회원 관리</a></li>
                                 <li><a href="S_MemberMain">탈퇴회원 관리</a></li>
                                 <li><a href="BannerMain">배너 관리</a></li>
@@ -88,13 +88,13 @@
                         </li>
                         <!-- 게시판 관리 -->
                         <li>
-                            <a data-toggle="collapse" href="#community-menu">
+                            <a data-toggle="collapse" href="#community-menu" class="active">
                             <i class="fa fa-pen-to-square fa-fw"></i> 
                             게시판 관리
                             <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level  collapse" id="community-menu">
+                            <ul class="nav nav-second-level  collapse  show" id="community-menu">
                                 <li><a href="RecipeMain">레시피 자랑</a></li>
-                                <li><a href="NotifiMain">공지사항</a></li>
+                                <li><a href="NotifiMain" class="active">공지사항</a></li>
                                 <li><a href="QuestionMain">자주 묻는 질문</a></li>
                                 <li><a href="EventMain">이벤트</a></li>
                             </ul>
@@ -170,7 +170,7 @@
 			<!-- /.row (내용자리)-->
 			<div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">관리자정보 관리</h1>
+                    <h1 class="page-header">공지사항 등록</h1>
                 </div>
             </div>
             <!-- /.row -->
@@ -178,26 +178,38 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-							<form role="form" name="f" method="post" enctype="multipart/form-data" action="/admin/main.php">
-							<input type="hidden" name="pagecode" value="basic">
-							<input type="hidden" name="subpage" value="basic_info">
-							<input type="hidden" name="mode" value="MODIFY_ACTION">
+							<form role="form" name="f" method="get" action="/admin/main.php">
 								<div class="form-group">
-									<label>아이디</label>
-									<p class="form-control-static">
-									<strong>admin</strong>
+									<label>공지 여부</label>
+									<div class="radio">
+										<label>
+											<input type="radio" name="published" value="Y" checked>
+											예
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="published" value="N">
+											아니요
+										</label>
+									</div>
 								</div>
 								<div class="form-group">
-									<label for="password">비밀번호</label>
-									<input type="password" class="form-control" id="password" name="password" placeholder="Password" maxlength="16">
+									<label for="notifi_title">제목</label>
+									<input type="text" class="form-control" id="notifi_title" name="notifi_title" placeholder="공지사항 제목">
 								</div>
 								<div class="form-group">
-									<label>로그인 정보</label>
-									<p class="form-control-static">
-									<strong>2023-04-07 16:26:15 (로그인횟수 : 15,351)</strong>
-									</p>
+									<label for="notifi_writer">작성자</label>
+									<input type="text" class="form-control" id="notifi_writer" name="notifi_writer" placeholder="작성자" value="관리자">
 								</div>
-								<button type="submit" class="btn btn-outline btn-success">수정</button>
+								<div class="form-group">
+									<label for="notifi_">내용</label>
+									<input type="text" class="form-control" id="notifi" name="notifi">
+								</div>
+								<button type="submit" class="btn btn-outline btn-success"
+								onclick="location.href='/NotifiMain'">등록</button>
+								<button type="button" class="btn btn-outline btn-info" 
+								onclick="location.href='/NotifiMain'">목록</button>
 							</form>
                         </div>
                     </div>

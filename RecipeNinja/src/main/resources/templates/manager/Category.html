@@ -20,8 +20,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="css/manager/ManagerMain.css">
+<link rel="stylesheet" href="css/manager/Form.css">
 
-</script>
 </head>
 
 <body> 
@@ -63,13 +63,13 @@
                     <ul class="nav" id="side-menu">
                     	<!-- 기본정보 -->
                         <li>
-                            <a data-toggle="collapse" href="#basic-info-menu" class="active">
+                            <a data-toggle="collapse" href="#basic-info-menu">
                             <i class="fa fa-gear fa-fw"></i> 
                             기본정보
                             <span class="fa arrow"></span>
                             </a>
-                            <ul class="nav nav-second-level collapse show" id="basic-info-menu">
-                                <li><a href="ManagerMain" class="active">관리자정보 관리</a></li>
+                            <ul class="nav nav-second-level collapse" id="basic-info-menu">
+                                <li><a href="ManagerMain">관리자정보 관리</a></li>
                                 <li><a href="MemberMain">회원 관리</a></li>
                                 <li><a href="S_MemberMain">탈퇴회원 관리</a></li>
                                 <li><a href="BannerMain">배너 관리</a></li>
@@ -94,7 +94,7 @@
                             <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level  collapse" id="community-menu">
                                 <li><a href="RecipeMain">레시피 자랑</a></li>
-                                <li><a href="NotifiMain">공지사항</a></li>
+                                <li><a href="NotifiMain" class="active">공지사항</a></li>
                                 <li><a href="QuestionMain">자주 묻는 질문</a></li>
                                 <li><a href="EventMain">이벤트</a></li>
                             </ul>
@@ -152,13 +152,13 @@
                         </li>
                         <!-- 카테고리 관리 -->
                         <li>
-                            <a data-toggle="collapse" href="#category-menu">
+                            <a data-toggle="collapse" href="#category-menu"  class="active">
                             <i class="fa fa-shopping-cart fa-fw"></i>
                             카테고리 관리
                             <span class="fa arrow"></span>
                             </a>
-                            <ul class="nav nav-second-level collapse" id="category-menu">
-                                <li><a href="Category">카테고리 관리</a></li>
+                            <ul class="nav nav-second-level collapse show" id="category-menu">
+                                <li><a href="Category" class="active">카테고리 관리</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -170,7 +170,7 @@
 			<!-- /.row (내용자리)-->
 			<div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">관리자정보 관리</h1>
+                    <h1 class="page-header">카테고리 관리</h1>
                 </div>
             </div>
             <!-- /.row -->
@@ -178,26 +178,77 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-							<form role="form" name="f" method="post" enctype="multipart/form-data" action="/admin/main.php">
+							<form role="form" name="f" method="get" action="/admin/main.php">
 							<input type="hidden" name="pagecode" value="basic">
 							<input type="hidden" name="subpage" value="basic_info">
 							<input type="hidden" name="mode" value="MODIFY_ACTION">
-								<div class="form-group">
-									<label>아이디</label>
-									<p class="form-control-static">
-									<strong>admin</strong>
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group input-group">
+											<input type="text" class="form-control" name="select_string">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="submit">
+													<i class="fa fa-search"></i>
+												</button>
+											</span>
+										</div>
+									</div>
+						 			<div class="col-sm-6 text-right">
+										<button type="button" class="btn btn-outline btn-primary" 
+										onclick="location.href='/InsertTopCategory'">대분류 등록</button>
+									</div>
 								</div>
-								<div class="form-group">
-									<label for="password">비밀번호</label>
-									<input type="password" class="form-control" id="password" name="password" placeholder="Password" maxlength="16">
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover">
+										<colgroup>
+											<col width="10%">
+											<col width="10%">
+											<col width="25%">
+											<col width="20%">
+											<col width="20%">
+											<col width="15%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>순서1</th>
+												<th>순서2</th>
+												<th>분류명</th>
+												<th>코드</th>
+												<th>등록일</th>
+												<th>하위분류등록</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<input type="text" size="5" value="1" id="top_category">
+													<button type="button" class="btn btn-info btn-xs"
+													onclick="if(confirm('수정하시겠습니까?')) location.href='Catagory';">수정</button>
+												</td>
+												<td></td>
+												<td><a href="TopCategory">신선 식품</a></td>
+												<td><a href="TopCategory">001</a></td>
+												<td>2023-04-010 20:35:17</td>
+												<td>
+													<button type="button" class="btn btn-outline btn-primary btn-sm"
+													onclick="location.href='/InsertMidCategory'">중분류등록</button>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>
+													<input type="text" size="5" value="1" id="mid_category">
+													<button type="button" class="btn btn-info btn-xs"
+													onclick="if(confirm('수정하시겠습니까?')) location.href='Catagory';">수정</button>
+												</td>
+												<td><a href="MidCategory">과일</a></td>
+												<td><a href="MidCategory">001001</a></td>
+												<td>2023-04-010 20:35:17</td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								<div class="form-group">
-									<label>로그인 정보</label>
-									<p class="form-control-static">
-									<strong>2023-04-07 16:26:15 (로그인횟수 : 15,351)</strong>
-									</p>
-								</div>
-								<button type="submit" class="btn btn-outline btn-success">수정</button>
 							</form>
                         </div>
                     </div>

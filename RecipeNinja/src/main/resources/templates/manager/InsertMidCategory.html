@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>관리자 페이지</title>
+
+<!-- Font Awesome CDN 로드 -->
+<script src="https://kit.fontawesome.com/d389720e5d.js"
+	crossorigin="anonymous"></script>
+
+<!-- 부트스트랩 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- Popper.js -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- 부트스트랩 js -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/manager/ManagerMain.css">
+<link rel="stylesheet" href="css/manager/Form.css">
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation"
+			style="margin-bottom: 0">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/ManagerMain">Administrator</a>
+			</div>
+
+			<!-- navbar-header -->
+			<ul class="nav navbar-top-links navbar-right">
+				<!-- /.dropdown -->
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
+				</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="Market" target="blank"> <i
+								class="fa fa-home fa-fw"> </i> HOME
+						</a></li>
+						<li class="divider"></li>
+						<li><a href="ManagerLogin"> <i
+								class="fa fa-sign-out fa-fw"> </i> Logout
+						</a></li>
+					</ul> <!-- /.dropdown-user --></li>
+				<!-- /.dropdown -->
+			</ul>
+			<!-- /.navbar-top-links -->
+			<!-- Navigation sidebar -->
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<!-- 기본정보 -->
+						<li><a data-toggle="collapse" href="#basic-info-menu"> <i
+								class="fa fa-gear fa-fw"></i> 기본정보 <span class="fa arrow"></span>
+						</a>
+							<ul class="nav nav-second-level collapse" id="basic-info-menu">
+								<li><a href="ManagerMain">관리자정보 관리</a></li>
+								<li><a href="MemberMain">회원 관리</a></li>
+								<li><a href="S_MemberMain">탈퇴회원 관리</a></li>
+								<li><a href="BannerMain">배너 관리</a></li>
+							</ul></li>
+						<!-- 주문 관리 -->
+						<li><a data-toggle="collapse" href="#order-menu"> <i
+								class="fa fa-shopping-cart fa-fw"></i> 주문 관리 <span
+								class="fa arrow"></span>
+						</a>
+							<ul class="nav nav-second-level collapse" id="order-menu">
+								<li><a href="OrderMain">전체 주문 관리</a></li>
+							</ul></li>
+						<!-- 게시판 관리 -->
+						<li><a data-toggle="collapse" href="#community-menu"> <i
+								class="fa fa-pen-to-square fa-fw"></i> 게시판 관리 <span
+								class="fa arrow"></span></a>
+							<ul class="nav nav-second-level  collapse" id="community-menu">
+								<li><a href="RecipeMain">레시피 자랑</a></li>
+								<li><a href="NotifiMain">공지사항</a></li>
+								<li><a href="QuestionMain">자주 묻는 질문</a></li>
+								<li><a href="EventMain">이벤트</a></li>
+							</ul></li>
+						<!-- 제품 관리 -->
+						<li><a data-toggle="collapse" href="#product-menu"
+							class="active"> <i class="fa fa-wrench fa-fw"></i> 제품 관리 <span
+								class="fa arrow"></span></a>
+							<ul class="nav nav-second-level collapse show" id="product-menu">
+								<li><a href="ProductList" class="active">전체 제품 관리</a></li>
+								<!-- 신선 식품 -->
+								<li><a data-toggle="collapse" href="#fresh-product-menu">
+										신선 식품 <span class="fa arrow"></span>
+								</a>
+									<ul class="nav nav-third-level collapse"
+										id="fresh-product-menu">
+										<li><a href="">과일</a></li>
+										<li><a href="">채소</a></li>
+										<li><a href="">곡류</a></li>
+										<li><a href="">육류</a></li>
+										<li><a href="">수산물</a></li>
+									</ul></li>
+								<!-- 가공 식품 -->
+								<li><a data-toggle="collapse" href="#process-product-menu">
+										가공 식품 <span class="fa arrow"></span>
+								</a>
+									<ul class="nav nav-third-level collapse"
+										id="process-product-menu">
+										<li><a href="">면 / 라면 / 통조림</a></li>
+										<li><a href="">과자 / 시리얼 / 베이커리</a></li>
+										<li><a href="">즉석밥 / 떡</a></li>
+										<li><a href="">생수 / 음료 / 커피</a></li>
+										<li><a href="">가루 / 조미료 / 오일</a></li>
+										<li><a href="">장 / 양념 /잼</a></li>
+									</ul></li>
+								<!-- 간편식 -->
+								<li><a data-toggle="collapse" href="#simple-product-menu">
+										간편식 <span class="fa arrow"></span>
+								</a>
+									<ul class="nav nav-third-level collapse"
+										id="simple-product-menu">
+										<li><a href="">국 / 찌개 / 탕</a></li>
+										<li><a href="">김치 / 젓갈 / 반찬</a></li>
+										<li><a href="">밀키트</a></li>
+										<li><a href="">냉동식품</a></li>
+										<li><a href="">양념육 / 해물요리</a></li>
+										<li><a href="">샐러드 / 도시락</a></li>
+									</ul></li>
+							</ul></li>
+						<!-- 카테고리 관리 -->
+						<li><a data-toggle="collapse" href="#category-menu"> <i
+								class="fa fa-shopping-cart fa-fw"></i> 카테고리 관리 <span
+								class="fa arrow"></span>
+						</a>
+							<ul class="nav nav-second-level collapse" id="category-menu">
+								<li><a href="Category">카테고리 관리</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Page wrapper -->
+		<div id="page-wrapper" style="height: auto;">
+			<!-- /.row (내용자리)-->
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">중분류 관리</h1>
+				</div>
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<form role="form" name="f" method="get" action="/admin/main.php">
+								<div class="form-group">
+									<label>진열상태</label>
+									<div class="radio">
+										<label> 
+										<input type="radio" name="published" value="Y" checked> 예
+										</label>
+									</div>
+									<div class="radio">
+										<label> <input type="radio" name="published" value="N">
+											아니요
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label>신선 식품</label>
+								</div>
+								<div class="form-group">
+									<label for="event_link">분류명</label> 
+									<input type="text" class="form-control" placeholder="분류명"
+									id="midcategory_name" name="midcategory_name">
+								</div>
+								<button type="submit" class="btn btn-outline btn-success"
+								onclick="location.href='/Category'">등록</button>
+								<button type="button" class="btn btn-outline btn-info"
+								onclick="location.href='/Category'">목록</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
