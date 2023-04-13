@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mypage Main</title>
-	<link rel="stylesheet" href="css/mypage/MypageMain.css">
+	<link rel="stylesheet" href="css/mypage/MypageProductCancelReturnExchange.css">
 	<!-- Font Awesome CDN 로드 -->
 	<script src="https://kit.fontawesome.com/d389720e5d.js" crossorigin="anonymous"></script>
 
@@ -120,12 +120,13 @@
 									<div class="menu-6 leftfsap">MY 쇼핑</div>
 									<div class="menu-7 leftbap">
 										<ul class="menu-8">
-											<li id="order-list-page" class="menu-9 selected"><a href="/MypageProductOrderList"
-													title="주문목록/배송조회" target="_self" class="menu-10">주문목록/배송조회<span
+											<li id="order-list-page" class="menu-9 selected"><a
+													href="/MypageProductOrderList" title="주문목록/배송조회" target="_self"
+													class="menu-10">주문목록/배송조회<span class="menu-11"></span></a></li>
+											<li id="mc-cancel-return-page" class="menu-9"><a
+													href="/MypageProductCancelReturnExchange" title="취소/반품/교환/환불내역"
+													target="_self" class="menu-10">취소/반품/교환/환불내역<span
 														class="menu-11"></span></a></li>
-											<li id="mc-cancel-return-page" class="menu-9"><a href="/MypageProductCancelReturnExchange"
-													title="취소/반품/교환/환불내역" target="_self"
-													class="menu-10">취소/반품/교환/환불내역<span class="menu-11"></span></a></li>
 											<li id="mc-product-like-list" class="menu-9"><a href="/MypageProductLike"
 													title="상품 찜 리스트" target="_self" class="menu-10">상품 찜 리스트<span
 														class="menu-11"></span></a></li>
@@ -142,8 +143,8 @@
 											<li id="mc-pay-page" class="menu-9"><a href="/MypageNinjaPay" title="결제수단관리"
 													target="_self" class="menu-10">결제수단관리<span
 														class="menu-11"></span></a></li>
-											<li id="mc-address-book-page" class="menu-9"><a href="/MypageDelivery" title="배송지 관리"
-													target="_self" class="menu-10">배송지 관리<span
+											<li id="mc-address-book-page" class="menu-9"><a href="/MypageDelivery"
+													title="배송지 관리" target="_self" class="menu-10">배송지 관리<span
 														class="menu-11"></span></a></li>
 											<li id="mc-Grade-benefits" class="menu-9"><a href="/MypageMembership"
 													title="등급혜택" target="_self" class="menu-10">등급혜택<span
@@ -156,8 +157,8 @@
 									<div class="menu-6 leftfsap">MY 레시피</div>
 									<div class="menu-7 leftbap">
 										<ul class="menu-8">
-											<li id="mc-like-recipe" class="menu-9"><a href="/MypageRecipeLike" title="찜한 레시피"
-													target="_self" class="menu-10">찜한 레시피<span
+											<li id="mc-like-recipe" class="menu-9"><a href="/MypageRecipeLike"
+													title="찜한 레시피" target="_self" class="menu-10">찜한 레시피<span
 														class="menu-11"></span></a></li>
 											<li id="mc-my-write-recipe" class="menu-9"><a href="/MypageMyRecipe" title="내가 쓴 레시피"
 													target="_self" class="menu-10">내가 쓴 레시피<span
@@ -220,6 +221,56 @@
 							</ul>
 						</div>
 						<div class="mypage-area-contents dHwqA-d">
+							<h1 class="cancel-return-exchange-title">취소/반품/교환/환불내역</h1>
+							<div class="table-container">
+								<table>
+									<tr>
+										<th>상품 이미지</th>
+										<th>주문번호</th>
+										<th>상품명</th>
+										<th>상태</th>
+										<th>옵션</th>
+										<th>금액</th>
+										<th>요청일시</th>
+									</tr>
+									<tr>
+										<td><img src="/img/mypage/파프리카.jpg" alt="마우스"></td>
+										<td>1</td>
+										<td>마우스</td>
+										<td>취소</td>
+										<td>검정</td>
+										<td>10,000원</td>
+										<td>2023-04-10 10:30:00</td>
+									</tr>
+									<tr>
+										<td><img src="/img/mypage/파프리카.jpg" alt="키보드"></td>
+										<td>2</td>
+										<td>키보드</td>
+										<td>반품</td>
+										<td>흰색</td>
+										<td>20,000원</td>
+										<td>2023-04-11 14:20:00</td>
+									</tr>
+									<tr>
+										<td><img src="/img/mypage/파프리카.jpg" alt="모니터"></td>
+										<td>3</td>
+										<td>모니터</td>
+										<td>교환</td>
+										<td>27인치</td>
+										<td>300,000원</td>
+										<td>2023-04-11 16:50:00</td>
+									</tr>
+									<tr>
+										<td><img src="/img/mypage/파프리카.jpg" alt="마우스패드"></td>
+										<td>4</td>
+										<td>마우스패드</td>
+										<td>환불</td>
+										<td>미정</td>
+										<td>5,000원</td>
+										<td>2023-04-12 09:10:00</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>

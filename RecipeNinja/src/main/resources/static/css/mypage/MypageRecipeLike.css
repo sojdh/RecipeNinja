@@ -4,9 +4,7 @@
 }
 
 /* 화면 전체 렙 */
-.wrapper {
-	
-}
+.wrapper {}
 
 #toMenu {
 	height: 30px;
@@ -437,4 +435,70 @@ li {
 /* mypage-area-contents 왼쪽 여백 */
 .dHwqA-d {
 	margin: 0px 0px 0px 50px;
+}
+
+.recipelike {
+	margin: 0 0 50px;
+	font-size: 30px;
+}
+
+.recipe-list-container {
+	border: 1px solid #ccc;
+	margin: 1rem 0;
+	padding: 1rem;
+	background-color: rgb(255, 255, 255);
+}
+
+.recipe-list {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 1rem;
+	background-color: #f8f8f8;
+}
+
+.recipe-list li {
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
+	overflow: hidden;
+}
+
+.recipe-list li a {
+	display: block;
+	text-decoration: none;
+	color: #333;
+}
+
+.recipe-list li a:hover {
+	text-decoration: underline;
+}
+
+.recipe-list li img {
+	width: 100%;
+	height: auto;
+}
+
+.recipe-list li h3 {
+	font-size: 1.25rem;
+	margin: 0.5rem 0;
+}
+
+.recipe-list li p {
+	font-size: 0.875rem;
+	margin: 0;
+}
+
+.remove-btn {
+	display: block;
+	margin: 0.5rem auto;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 0.25rem;
+	background-color: #ccc;
+	color: #fff;
+	cursor: pointer;
+}
+
+.remove-btn:hover {
+	background-color: #999;
 }

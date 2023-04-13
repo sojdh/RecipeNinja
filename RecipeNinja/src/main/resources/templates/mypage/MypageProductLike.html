@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Mypage Main</title>
-	<link rel="stylesheet" href="css/mypage/MypageMain.css">
+	<title>Mypage Product Like</title>
+	<link rel="stylesheet" href="/css/mypage/MypageProductLike.css">
 	<!-- Font Awesome CDN 로드 -->
 	<script src="https://kit.fontawesome.com/d389720e5d.js" crossorigin="anonymous"></script>
 
@@ -21,6 +21,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 	<script type="text/javascript" th:src="@{/js/mypage/MypageProductLike.js}"></script>
 	<script type="text/javascript" th:src="@{/js/mypage/MypageUserModify.js}"></script>
+
 
 </head>
 
@@ -120,12 +121,13 @@
 									<div class="menu-6 leftfsap">MY 쇼핑</div>
 									<div class="menu-7 leftbap">
 										<ul class="menu-8">
-											<li id="order-list-page" class="menu-9 selected"><a href="/MypageProductOrderList"
-													title="주문목록/배송조회" target="_self" class="menu-10">주문목록/배송조회<span
+											<li id="order-list-page" class="menu-9 selected"><a
+													href="/MypageProductOrderList" title="주문목록/배송조회" target="_self"
+													class="menu-10">주문목록/배송조회<span class="menu-11"></span></a></li>
+											<li id="mc-cancel-return-page" class="menu-9"><a
+													href="/MypageProductCancelReturnExchange" title="취소/반품/교환/환불내역"
+													target="_self" class="menu-10">취소/반품/교환/환불내역<span
 														class="menu-11"></span></a></li>
-											<li id="mc-cancel-return-page" class="menu-9"><a href="/MypageProductCancelReturnExchange"
-													title="취소/반품/교환/환불내역" target="_self"
-													class="menu-10">취소/반품/교환/환불내역<span class="menu-11"></span></a></li>
 											<li id="mc-product-like-list" class="menu-9"><a href="/MypageProductLike"
 													title="상품 찜 리스트" target="_self" class="menu-10">상품 찜 리스트<span
 														class="menu-11"></span></a></li>
@@ -142,8 +144,8 @@
 											<li id="mc-pay-page" class="menu-9"><a href="/MypageNinjaPay" title="결제수단관리"
 													target="_self" class="menu-10">결제수단관리<span
 														class="menu-11"></span></a></li>
-											<li id="mc-address-book-page" class="menu-9"><a href="/MypageDelivery" title="배송지 관리"
-													target="_self" class="menu-10">배송지 관리<span
+											<li id="mc-address-book-page" class="menu-9"><a href="/MypageDelivery"
+													title="배송지 관리" target="_self" class="menu-10">배송지 관리<span
 														class="menu-11"></span></a></li>
 											<li id="mc-Grade-benefits" class="menu-9"><a href="/MypageMembership"
 													title="등급혜택" target="_self" class="menu-10">등급혜택<span
@@ -220,11 +222,99 @@
 							</ul>
 						</div>
 						<div class="mypage-area-contents dHwqA-d">
+							<div class="wishlist gdQXGY">
+								<p class="mypage-area-contents-name izFbWh QxeWJ">상품 찜 리스트 <span
+										class="count">(0)</span></p>
+							</div>
+							<div class="product-like-container">
+								<div class="select-all">
+									<input type="checkbox" id="selectAll" class="selectAll-checkbox">
+									<label for="selectAll">전체선택</label>
+								</div>
+								<button class="delete-selected-items">선택 상품 삭제</button>
+								<div class="product-list">
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/브로콜리.jpg" alt="브로콜리">
+											<h3>브로콜리</h3>
+											<p class="price">$19.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/샐러드.jpg" alt="샐러드">
+											<h3>샐러드</h3>
+											<p class="price">$29.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/파프리카.jpg" alt="파프리카">
+											<h3>파프리카</h3>
+											<p class="price">$24.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/파프리카.jpg" alt="파프리카">
+											<h3>파프리카</h3>
+											<p class="price">$24.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/파프리카.jpg" alt="파프리카">
+											<h3>파프리카</h3>
+											<p class="price">$24.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/파프리카.jpg" alt="파프리카">
+											<h3>파프리카</h3>
+											<p class="price">$24.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/파프리카.jpg" alt="파프리카">
+											<h3>파프리카</h3>
+											<p class="price">$24.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+									<div class="product-item">
+										<div class="clickable">
+											<img src="/img/mypage/파프리카.jpg" alt="파프리카">
+											<h3>파프리카</h3>
+											<p class="price">$24.99</p>
+										</div>
+										<input type="checkbox" class="product-checkbox">
+										<button class="add-to-cart">장바구니</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<div id=footer>
 		<div class="container">
@@ -257,6 +347,9 @@
 			</div>
 		</div>
 	</div>
+
+
+
 </body>
 
 </html>

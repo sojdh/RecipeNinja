@@ -4,9 +4,7 @@
 }
 
 /* 화면 전체 렙 */
-.wrapper {
-	
-}
+.wrapper {}
 
 #toMenu {
 	height: 30px;
@@ -438,3 +436,60 @@ li {
 .dHwqA-d {
 	margin: 0px 0px 0px 50px;
 }
+
+.delivery-title {
+	margin: 0 0 50px;
+	font-size: 30px;
+}
+
+.delivery-info-container {
+	border: 1px solid #ccc;
+	padding: 20px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.delivery-info {
+	flex: 1;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.delivery-info h4 {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+.delivery-info p {
+	font-size: 14px;
+	color: #666;
+	margin: 0;
+}
+
+.edit-button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.edit-button:hover {
+	background-color: #0062cc;
+}
+
+.delivery-add-container {
+	border: 1px solid #ccc;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.delivery-add {
+		text-decoration: none;
+}
+
