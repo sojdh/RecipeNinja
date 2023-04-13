@@ -13,6 +13,15 @@ import org.springframework.web.servlet.ModelAndView;
 		public ModelAndView market() {
 			return new ModelAndView("market/MarketMain");
 		}
+		@RequestMapping("MarketLogin")
+		public ModelAndView marketLogin() {
+			return new ModelAndView("market/MarketLogin");
+		}
+		@RequestMapping("MarketSignup")
+		public ModelAndView marketSignup() {
+			return new ModelAndView("market/MarketSignup");
+		}
+
 
 	
 }

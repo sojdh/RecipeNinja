@@ -4,9 +4,7 @@
 }
 
 /* 화면 전체 렙 */
-.wrapper {
-	
-}
+.wrapper {}
 
 #toMenu {
 	height: 30px;
@@ -438,3 +436,148 @@ li {
 .dHwqA-d {
 	margin: 0px 0px 0px 50px;
 }
+
+.Ninja-Pay {
+	margin: 0 0 50px;
+	font-size: 30px;
+}
+
+.money-management-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+	background: rgb(0, 128, 192);
+	padding: 20px;
+}
+
+.charge-button,
+.withdraw-button {
+	padding: 10px;
+	background-color: rgb(0, 128, 255);
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.charge-button:hover,
+.withdraw-button:hover {
+	background-color: #0077FF;
+}
+
+.ninjapay-menu-wrapper {
+	border-top: 1px solid #fff;
+	clear: both;
+}
+
+.ninjapay-menu {
+	clear: both;
+	margin-top: 30px;
+	position: relative;
+}
+
+.ninjapay-menu__ul {
+	background: #fbfbfb;
+	border-bottom: 1px solid #898d96;
+	border-right: 1px solid #898d96;
+	border-top: 2px solid #898d96;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.ninjapay-menu__ul:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.ninjapay-menu__li--ninjaCash {
+	border-left: 1px solid #dbdddf;
+	float: left;
+	height: 130px;
+	position: relative;
+	width: 33%;
+}
+
+.ninjapay-menu__li--ninjaCash__text {
+	color: #007bc7;
+	font-size: 20px;
+	font-weight: 700;
+	padding-top: 50px;
+	text-align: center;
+}
+
+.ninjapay-menu__li--accumulatedCash,
+.ninjapay-menu__li--expectedCash {
+	border-left: 1px solid #dbdddf;
+	float: left;
+	height: 130px;
+	position: relative;
+	width: 33%;
+}
+
+.ninjapay-menu-ninjaCash__dt {
+	color: #444;
+	font-size: 20px;
+	font-weight: 700;
+	padding-top: 25px;
+	text-align: center;
+}
+
+.ninjapay-menu-ninjaCash__dd {
+	font-weight: 700;
+	margin: 0;
+	padding: 20px 0 0;
+	text-align: center;
+}
+
+.ninjapay-menu__li--ninjaCash__money {
+	color: #111;
+	font-size: 30px;
+}
+
+.ninjapay-menu__li--ninjaCash__money__unit {
+	color: #111;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.paycontainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.link {
+	margin-bottom: 20px;
+	padding: 20px;
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.link:hover {
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+}
+.link2 {
+	padding: 20px;
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #000;
+	background-color: rgb(0, 128, 255);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.link2:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
