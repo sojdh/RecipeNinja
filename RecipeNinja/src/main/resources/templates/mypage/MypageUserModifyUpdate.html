@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mypage Main</title>
-	<link rel="stylesheet" href="css/mypage/MypageMain.css">
+	<link rel="stylesheet" href="css/mypage/MypageUserModifyUpdate.css">
 	<!-- Font Awesome CDN 로드 -->
 	<script src="https://kit.fontawesome.com/d389720e5d.js" crossorigin="anonymous"></script>
 
@@ -139,15 +139,13 @@
 											<li id="mc-user-modify-page" class="menu-9"><a href="/MypageUserModify"
 													title="개인정보확인/수정" target="_self" class="menu-10">개인정보확인/수정<span
 														class="menu-11"></span></a></li>
-											<li id="mc-pay-page" class="menu-9"><a href="/MypageNinjaPay" title="결제수단관리"
-													target="_self" class="menu-10">결제수단관리<span
-														class="menu-11"></span></a></li>
+											<li id="mc-pay-page" class="menu-9"><a href="/MypageNinjaPay" title="결제수단관리" target="_self"
+													class="menu-10">결제수단관리<span class="menu-11"></span></a></li>
 											<li id="mc-address-book-page" class="menu-9"><a href="/MypageDelivery" title="배송지 관리"
 													target="_self" class="menu-10">배송지 관리<span
 														class="menu-11"></span></a></li>
-											<li id="mc-Grade-benefits" class="menu-9"><a href="/MypageMembership"
-													title="등급혜택" target="_self" class="menu-10">등급혜택<span
-														class="menu-11"></span></a>
+											<li id="mc-Grade-benefits" class="menu-9"><a href="/MypageMembership" title="등급혜택"
+													target="_self" class="menu-10">등급혜택<span class="menu-11"></span></a>
 											</li>
 										</ul>
 									</div>
@@ -220,11 +218,114 @@
 							</ul>
 						</div>
 						<div class="mypage-area-contents dHwqA-d">
+							<h1 class="usermodify-auth-title">회원정보수정</h1>
+							<form>
+								<table class="table">
+									<tbody>
+										<tr>
+											<th scope="row">아이디(이메일)</th>
+											<td>
+												<div class="table-box">
+													<input type="email" id="email" placeholder="abc@gmail.com" />
+													<button type="button" class="btn btn-secondary"
+														id="emailChangeBtn">이메일 변경</button>
+												</div>
+												<div style="display:none;">
+													<input type="email" id="newEmail" placeholder="새 이메일" />
+													<button type="button" class="btn btn-secondary"
+														id="newEmailSendBtn">인증메일 전송</button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">이름</th>
+											<td>
+												<div class="table-box">
+													<input type="text" id="name" placeholder="홍길동" />
+													<button type="button" class="btn btn-secondary"
+														id="nameChangeBtn">이름 변경</button>
+												</div>
+												<div style="display:none;">
+													<input type="text" id="newName" placeholder="새 이름" />
+													<div>
+														<input type="checkbox" id="authCheckbox" checked>
+														<label for="authCheckbox">본인명의 휴대폰으로 인증</label>
+													</div>
+													<button type="button" class="btn btn-secondary" id="nameAuthBtn">본인
+														인증</button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대폰 번호</th>
+											<td>
+												<div class="table-box">
+													<input type="tel" id="phone" placeholder="010-1234-5678" />
+													<button type="button" class="btn btn-secondary"
+														id="phoneChangeBtn">번호 변경</button>
+												</div>
+												<div style="display:none;">
+													<input type="tel" id="newPhone" placeholder="새 번호" />
+													<div>
+														<input type="text" id="phoneAuthCode" placeholder="인증번호 입력" />
+														<button type="button" class="btn btn-secondary"
+															id="phoneAuthBtn">인증번호 전송</button>
+													</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">비밀번호 변경</th>
+											<td>
+												<div class="pw-box">
+													<input type="password" id="currentPassword" placeholder="현재 비밀번호" />
+												</div>
+												<div class="pw-box">
+													<input type="password" id="newPassword" placeholder="새 비밀번호" />
+												</div>
+												<div class="pw-box">
+													<input type="password" id="newPasswordConfirm"
+														placeholder="새 비밀번호 확인" />
+												</div>
+												<div class="pw-box">
+													<button type="button" class="btn btn-secondary"
+														id="passwordChangeBtn">비밀번호 변경</button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">배송지</th>
+											<td>
+												<p>배송지 주소 관리는 배송지 관리에서 수정, 등록 가능합니다.</p>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">수신 설정</th>
+											<td>
+												<div>
+													<input type="checkbox" id="marketingAgree" />
+													<label for="marketingAgree">마케팅 및 이벤트 목적의 개인정보 수집 및 이용 동의 함</label>
+												</div>
+												<div>
+													<input type="checkbox" id="optOut" />
+													<label for="optOut">광고성 정보 수신 철회함</label>
+													<input type="checkbox" id="smsOptOut" />
+													<label for="smsOptOut">SMS/MMS</label>
+													<input type="checkbox" id="emailOptOut" />
+													<label for="emailOptOut">이메일</label>
+													<input type="checkbox" id="pushOptOut" />
+													<label for="pushOptOut">푸시알림</label>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<div id=footer>
 		<div class="container">
