@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="asdf"> 
+<!-- 쿼리 호출 id /  -->
+  <select id="getManagerID" resultType="com.ysu.recipeninja.manager.model.vo.Members_VO">
+    SELECT * FROM members
+  </select>
+</mapper>
