@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 		public ModelAndView productsubpage() {
 			return new ModelAndView("market/ProductSubPage");
 		}
-	}
+
 		@RequestMapping("MarketLogin")
 		public ModelAndView marketLogin() {
 			return new ModelAndView("market/MarketLogin");
@@ -32,6 +32,6 @@ import org.springframework.web.servlet.ModelAndView;
 			return new ModelAndView("market/MarketSignup");
 		}
 
-
 	
+}
 }
