@@ -16,15 +16,13 @@ import org.springframework.web.servlet.ModelAndView;
 	
 	
 		}
-<<<<<<< HEAD
 	@Controller
 	public class ProductSubPage{
 		@RequestMapping("ProductSubPage")
 		public ModelAndView productsubpage() {
 			return new ModelAndView("market/ProductSubPage");
 		}
-	}
-=======
+
 		@RequestMapping("MarketLogin")
 		public ModelAndView marketLogin() {
 			return new ModelAndView("market/MarketLogin");
@@ -34,7 +32,6 @@ import org.springframework.web.servlet.ModelAndView;
 			return new ModelAndView("market/MarketSignup");
 		}
 
-
->>>>>>> c0f10a2fb390f7fba10a3a47ab7a5306543d0df1
 	
+}
 }
