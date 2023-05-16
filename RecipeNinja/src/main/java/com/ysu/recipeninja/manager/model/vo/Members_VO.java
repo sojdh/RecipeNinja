@@ -2,7 +2,8 @@ package com.ysu.recipeninja.manager.model.vo;
 
 public class Members_VO {
 
-	private String member_id, member_password;
+	private String member_id;
+	private String member_password;
 
 	public String getMember_id() {
 		return member_id;
