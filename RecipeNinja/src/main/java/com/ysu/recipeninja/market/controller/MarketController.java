@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.ModelAndView;
 
 	@Controller
@@ -12,7 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 		@RequestMapping("Market")
 		public ModelAndView market() {
 			return new ModelAndView("market/MarketMain");
+	
+	
 		}
+	@Controller
+	public class ProductSubPage{
+		@RequestMapping("ProductSubPage")
+		public ModelAndView productsubpage() {
+			return new ModelAndView("market/ProductSubPage");
+		}
+
 		@RequestMapping("MarketLogin")
 		public ModelAndView marketLogin() {
 			return new ModelAndView("market/MarketLogin");
@@ -21,6 +31,7 @@ import org.springframework.web.servlet.ModelAndView;
 		public ModelAndView marketSignup() {
 			return new ModelAndView("market/MarketSignup");
 		}
+
 
 		@RequestMapping("MarketProductFresh")
 		public ModelAndView marketProductFresh() {
@@ -33,5 +44,5 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 
-	
+}
 }
