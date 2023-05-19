@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mypage Main</title>
+	<link rel="stylesheet" href="css/market/MarketOrderPayment.css">
+	<!-- Font Awesome CDN 로드 -->
+	<script src="https://kit.fontawesome.com/d389720e5d.js" crossorigin="anonymous"></script>
+
+	<!-- 부트스트랩 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+	<!-- Popper.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- 부트스트랩 js -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="wrap">
+			<div class="top_gnb_area">
+				<div class="container">
+					<div class="topBtnSort">
+						<div class=top_button>
+							<button type="button" class="btn btn-primary ">로그인</button>
+							<button type="button" class="btn btn-primary ">회원가입</button>
+							<button type="button" class="btn btn-primary ">고객센터</button>
+						</div>
+
+					</div>
+				</div>
+				<div class="top_area">
+					<div class="logo_area">
+						<h1>웹사이트 이름</h1>
+					</div>
+					<div class="search_area">
+						<div class="container">
+							<div class="col-sm-6">
+								<form class="form-inline">
+									<input class="topInput" type="search" name="query" placeholder="검색어를 입력하세요">
+									<button type="submit">검색</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="login_area">
+                <div class="login_button"><a href="/member/login">로그인</a></div>
+                <span><a href="/member/join">회원가입</a></span>
+            </div> -->
+					<div class="clearfix"></div>
+				</div>
+				<div class="navi_bar_area">
+					<ul class="menu">
+						<li><a href="#">MENU1</a>
+							<ul class="submenu">
+								<li><a href="#">submenu01</a></li>
+								<li><a href="#">submenu02</a></li>
+								<li><a href="#">submenu03</a></li>
+								<li><a href="#">submenu04</a></li>
+								<li><a href="#">submenu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">MENU2</a>
+							<ul class="submenu">
+								<li><a href="#">submenu01</a></li>
+								<li><a href="#">submenu02</a></li>
+								<li><a href="#">submenu03</a></li>
+								<li><a href="#">submenu04</a></li>
+								<li><a href="#">submenu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">MENU3</a>
+							<ul class="submenu">
+								<li><a href="#">submenu01</a></li>
+								<li><a href="#">submenu02</a></li>
+								<li><a href="#">submenu03</a></li>
+								<li><a href="#">submenu04</a></li>
+								<li><a href="#">submenu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">MENU4</a>
+							<ul class="submenu">
+								<li><a href="#">submenu01</a></li>
+								<li><a href="#">submenu02</a></li>
+								<li><a href="#">submenu03</a></li>
+								<li><a href="#">submenu04</a></li>
+								<li><a href="#">submenu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">MENU5</a>
+							<ul class="submenu">
+								<li><a href="#">submenu01</a></li>
+								<li><a href="#">submenu02</a></li>
+								<li><a href="#">submenu03</a></li>
+								<li><a href="#">submenu04</a></li>
+								<li><a href="#">submenu05</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="content_area">
+					<div class="container">
+						<div class="s_contents">
+							<h1 class="order-payment">주문/결제</h1>
+							<table>
+								<h2 class="sub-title">구매자 정보</h2>
+								<tr>
+									<td><label for="name">이름</label></td>
+									<td><input type="text" id="name" name="name"></td>
+								</tr>
+								<tr>
+									<td><label for="email">이메일</label></td>
+									<td><input type="email" id="email" name="email"></td>
+								</tr>
+								<tr>
+									<td><label for="phone">전화번호</label></td>
+									<td><input type="tel" id="phone" name="phone"></td>
+								</tr>
+							</table>
+
+							<table>
+								<h2 class="sub-title">받는 사람 정보
+									<button id="change_address">배송지 변경</button>
+								</h2>
+								<tr>
+									<td><label for="recipient_name">이름</label></td>
+									<td><input type="text" id="recipient_name" name="recipient_name"></td>
+								</tr>
+								<tr>
+									<td><label for="recipient_phone">전화번호</label></td>
+									<td><input type="tel" id="recipient_phone" name="recipient_phone"></td>
+								</tr>
+								<tr>
+									<td><label for="recipient_address">주소</label></td>
+									<td><input type="text" id="recipient_address" name="recipient_address"></td>
+								</tr>
+							</table>
+							<table>
+								<h2 class="sub-title">결제 정보</h2>
+								<tr>
+									<td><label for="all_product_price">총 상품 가격</label></td>
+									<td><input type="text" id="all_product_price" name="all_product_price"></td>
+								</tr>
+								<tr>
+									<td><label for="delivery_price">배송비</label></td>
+									<td><input type="text" id="delivery_price" name="delivery_price"></td>
+								</tr>
+								<tr>
+									<td><label for="saved_money">적립금</label></td>
+									<td><input type="text" id="saved_money" name="saved_money"></td>
+								</tr>
+								<tr>
+									<td><label for="all_pay_price">총 결제 금액</label></td>
+									<td><input type="text" id="all_pay_price" name="all_pay_price"></td>
+								</tr>
+
+							</table>
+							<input type="submit" value="결제하기">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id=footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h4>회사 정보</h4>
+					<ul>
+						<li>회사명: 쇼핑몰</li>
+						<li>사업자등록번호: 123-45-67890</li>
+						<li>대표자: 홍길동</li>
+						<li>주소: 서울시 강남구 삼성동 123-45</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h4>고객 센터</h4>
+					<ul>
+						<li>전화번호: 02-123-4567</li>
+						<li>이메일: cs@shop.com</li>
+						<li>상담 시간: 평일 09:00~18:00</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h4>팔로우하기</h4>
+					<ul>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Instagram</a></li>
+						<li><a href="#">Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

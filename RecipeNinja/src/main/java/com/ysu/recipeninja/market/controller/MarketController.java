@@ -22,6 +22,16 @@ import org.springframework.web.servlet.ModelAndView;
 			return new ModelAndView("market/MarketSignup");
 		}
 
+		@RequestMapping("MarketProductFresh")
+		public ModelAndView marketProductFresh() {
+			return new ModelAndView("market/MarketProductFresh");
+		}
+		@RequestMapping("MarketOrderPayment")
+		public ModelAndView marketOrderPayment() {
+			return new ModelAndView("market/MarketOrderPayment");
+		}
+
+
 
 	
 }

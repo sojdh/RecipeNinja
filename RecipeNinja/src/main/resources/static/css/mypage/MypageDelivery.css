@@ -2,7 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
-
+a{
+	text-decoration : none;
+}
 /* 화면 전체 렙 */
 .wrapper {}
 
