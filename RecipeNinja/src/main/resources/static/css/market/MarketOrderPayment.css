@@ -1,0 +1,267 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 화면 전체 렙 */
+.wrapper {
+	align-items: center;
+	height: 100vh;
+}
+
+#toMenu {
+	height: 30px;
+	width: 850px;
+}
+
+#topMenu ul li {
+	list-style: none;
+	color: white;
+	background-color: #2d2d2d;
+	float: left;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#topMenu .menuLink {
+	text-decoration: none;
+	color: white;
+	display: block;
+	width: 150px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", Dotum, Arial;
+}
+
+/* content 랩 */
+.wrap {
+	width: 1080px;
+	margin: auto;
+}
+
+/* 홈페이지 기능 네비 */
+.top_gnb_area {
+	width: 100%;
+	height: 50px;
+	background-color: #a2a2ea;
+}
+
+
+/* 로고, 검색, 로그인 */
+.top_area {
+	width: 100%;
+	height: 150px;
+	background-color: #f7f0b9;
+}
+
+/* 로고 영역 */
+.logo_area {
+	width: 25%;
+	height: 100%;
+	background-color: red;
+	float: left;
+}
+
+/* 검색 박스 영역 */
+.search_area {
+	width: 50%;
+	height: 100%;
+	background-color: yellow;
+	float: left;
+	text-align: center;
+}
+
+/* 로그인 버튼 영역 */
+.login_area {
+	width: 25%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
+.login_button {
+	height: 50%;
+	background-color: #D4DFE6;
+	margin-top: 30px;
+	line-height: 77px;
+	font-size: 40px;
+	font-weight: 900;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.login_area>span {
+	margin-top: 10px;
+	font-weight: 900;
+	display: inline-block;
+}
+
+.login_button {
+	height: 50%;
+	background-color: #D4DFE6;
+	margin-top: 30px;
+}
+
+.top_button {
+	position: relative;
+	left: 70%;
+}
+
+.topInput {
+	width: 300px;
+	height: 50px;
+	margin-top: 70px;
+}
+
+/* 제품 목록 네비 */
+.navi_bar_area {
+	width: 100%;
+	height: 42px;
+	background-color: #400040;
+	text-align: center;
+	float: left;
+}
+
+/* 홈페이지 메인 제품 목록  */
+.content_area {
+	width: 100%;
+	height: 1100px;
+}
+
+.container {
+	/* or any other desired width */
+	margin: 0 auto;
+	/* centers the container horizontally */
+}
+
+/* float 속성 해제 */
+.clearfix {
+	clear: both;
+}
+
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+
+}
+
+.menu>li {
+	width: 20%;
+	/*20*5=100%*/
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	background-color: #5778ff;
+}
+
+.menu a {
+	color: #fff;
+}
+
+.submenu>li {
+	line-height: 50px;
+	background-color: #94a9ff;
+}
+
+.submenu {
+	height: 0;
+	/*ul의 높이를 안보이게 처리*/
+	overflow: hidden;
+	position: relative;
+	z-index: 10;
+}
+
+.menu>li:hover {
+	background-color: #94a9ff;
+	transition-duration: 0.5s;
+}
+
+.menu>li:hover .submenu {
+	height: 250px;
+	/*서브메뉴 li한개의 높이 50*5*/
+	transition-duration: 1s;
+}
+
+#footer {
+	border-top: #ddd solid 2px;
+	width: 100%;
+	height: 200px;
+	background-color: #c0bfc8;
+	float: left;
+	margin-top: 200px;
+}
+
+#footer ul {
+	list-style: none;
+}
+
+#footer li {
+	margin: 10px;
+}
+
+.s_contents {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	padding: 0;
+}
+.order-payment {
+	margin: 100px 0 50px;
+}
+.sub-title {
+	padding-left: 2px;
+    margin: 30px 0 8px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 10px;
+	border: 1px solid #ccc; 
+}
+
+td label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel] {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+	background-color: #4285F4;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	padding: 10px;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 5px; 
+}
+
+#change_address {
+	background-color: transparent;
+	color: rgb(0, 0, 0);
+	cursor: pointer;
+	padding: 4px 8px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
