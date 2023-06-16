@@ -21,8 +21,30 @@
 
 <link rel="stylesheet" href="css/manager/ManagerMain.css">
 <link rel="stylesheet" href="css/manager/Form.css">
+
 <script type="text/javascript">
 
+function member_update(f){	
+	var member_password =$("#member_password").val().trim();
+	var member_name =$("#member_name").val().trim();
+	var member_nickname =$("#member_nickname").val().trim();
+	var member_phonenum =$("#member_phonenum").val().trim();
+	var point =$("#point").val().trim();
+	var rating =$("#rating").val().trim();
+	
+	if(member_password=="" || member_name=="" || member_nickname=="" || member_phonenum=="" || point=="" || rating==""){
+		alert("빈칸의 정보를 입력해주세요.")
+	}else{
+		f.action="MemberUpdate";
+		f.submit();
+	}
+}
+function member_delete(f){
+	if(confirm('삭제 하시겠습니까?')){
+		f.action="MemberDelete";
+		f.submit();
+	}
+}
 </script>
 
 </head>
@@ -185,56 +207,58 @@
 								<div class="form-group">
 									<label>등록일</label>
 									<p class="form-control-static">
-										<strong>2023-04-07 12:12:12</strong>
+										<strong th:text="${memberData.member_join_date}"></strong>
 									</p>
 								</div>
 								<div class="form-group">
 									<label>마지막 로그인</label>
 									<p class="form-control-staic">
-										<strong>2023-04-07 12:13:12</strong>
+										<strong th:text="${memberData.member_login_date}"></strong>
 									</p>
 								</div>
 								<div class="form-group">
 									<label>아이디</label>
 									<p class="form-control-static">
-										<strong>asdf@naver.com</strong>
+										<strong th:text="${memberData.member_id}"></strong>
+										<input type="hidden" name="member_id" th:value='${memberData.member_id}'>
 									</p>
 								</div>
 								<div class="form-group">
 									<label for="user_pwd">비밀번호</label>
-									<input type="password" class="form-control" id="user_pwd"
-									name="user_pwd" placeholder="비밀번호" maxlength="16">
+									<input type="password" class="form-control" id="member_password"
+									name="member_password" placeholder="비밀번호" maxlength="16" th:value='${memberData.member_password}'>
 									<p class="help-block"> *비밀번호 변경시 입력해주세요*</p>
 								</div>
 								<div class="form-group">
 									<label for="user_name">이름</label>
-									<input type="text" class="form-control" id="user_name"
-									name="user_name" placeholder="이름" value="홍길동">
+									<input type="text" class="form-control" id="member_name"
+									name="member_name" placeholder="이름" th:value="${memberData.member_name}">
 								</div>
 								<div class="form-group">
 									<label for="user_nickname">닉네임</label>
-									<input type="text" class="form-control" id="user_nickname"
-									name="user_nickname" placeholder="닉네임" value="축지법">
+									<input type="text" class="form-control" id="member_nickname"
+									name="member_nickname" placeholder="닉네임" th:value="${memberData.member_nickname}">
 								</div>
 								<div class="form-group">
 									<label for="user_phone">핸드폰번호</label>
-									<input type="text" class="form-control" id="user_phone"
-									name="user_phone" placeholder="핸드폰번호" value="01011112222">
+									<input type="text" class="form-control" id="member_phonenum"
+									name="member_phonenum" placeholder="핸드폰번호" th:value="${memberData.member_phonenum}">
 								</div>
 								<div class="form-group">
 									<label for="user_Point">포인트</label>
-									<input type="text" class="form-control" id="user_Point"
-									name="user_Point" placeholder="포인트" value="50000">
+									<input type="text" class="form-control" id="point"
+									name="point" placeholder="포인트" th:value="${memberData.point}">
 								</div>
 								<div class="form-group">
 									<label for="user_Rating">등급</label>
-									<input type="text" class="form-control" id="user_Rating"
-									name="user_Rating" placeholder="등급" value="Gold">
+									<input type="text" class="form-control" id="rating"
+									name="rating" placeholder="등급" th:value="${memberData.rating}">
 								</div>
 								<div class="form-group">
 									<div class="checkbox">
 										<label>
-											<input type="checkbox" name="user_sms" value="Y">
+											<input type="checkbox" name="sms_agree" id="sms_agree" th:value="${memberData.sms_agree}" 
+											th:checked="${memberData.sms_agree == 'Y'}" readonly="readonly">
 											 SMS 수신 동의
 										</label>
 									</div>
@@ -242,15 +266,16 @@
 								<div class="form-group">
 									<div class="checkbox">
 										<label>
-											<input type="checkbox" name="user_email" value="Y">
+											<input type="checkbox" name="email_agree" id="email_agree" th:value="${memberData.email_agree}" 
+											th:checked="${memberData.email_agree == 'Y'}" readonly="readonly">
 											 이메일 수신 동의
 										</label>
 									</div>
 								</div>
-								<button type="submit" class="btn btn-outline btn-success"
-								onclick="location.href='/MemberMain'">수정</button>
+								<button type="button" class="btn btn-outline btn-success"
+								onclick="member_update(this.form)">수정</button>
 								<button type="button" class="btn btn-outline btn-danger" 
-								onclick="if(confirm('탈퇴 처리 하시겠습니까?')) location.href='MemberMain';">탈퇴</button>
+								onclick="member_delete(this.form)">탈퇴</button>
 								<button type="button" class="btn btn-outline btn-info" 
 								onclick="location.href='/MemberMain'">목록</button>
 							</form>

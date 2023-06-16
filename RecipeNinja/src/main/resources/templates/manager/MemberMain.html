@@ -225,32 +225,14 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>10</td>
-												<td><a href="Member">asefd@naver.com</a></td>
-												<td>홍길동</td>
-												<td>01011112222</td>
-												<td>40000</td>
-												<td>Gold</td>
-												<td>2023-04-07 20:35:17</td>
-											</tr>
-											<tr>
-												<td>9</td>
-												<td><a href="Member">asefd@naver.com</a></td>
-												<td>홍길동</td>
-												<td>01011112222</td>
-												<td>40000</td>
-												<td>Gold</td>
-												<td>2023-04-07 20:35:17</td>
-											</tr>
-											<tr>
-												<td>8</td>
-												<td><a href="Member">asefd@naver.com</a></td>
-												<td>홍길동</td>
-												<td>01011112222</td>
-												<td>40000</td>
-												<td>Gold</td>
-												<td>2023-04-07 20:35:17</td>
+											<tr th:each="member, index : ${memberList}">
+												<td th:text="${memberList.size() - index.index}"></td>
+												<td><a th:href="'Member?member_id=' + ${member.member_id}" th:text="${member.member_id}"></a></td>
+												<td th:text="${member.member_name}"></td>
+												<td th:text="${member.member_phonenum}"></td>
+												<td th:text="${member.point}"></td>
+												<td th:text="${member.rating}"></td>
+												<td th:text="${member.member_join_date}"></td>
 											</tr>
 										</tbody>
 									</table>
