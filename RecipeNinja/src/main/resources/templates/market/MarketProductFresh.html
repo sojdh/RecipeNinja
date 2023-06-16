@@ -10,7 +10,7 @@
 
 	<!-- 부트스트랩 CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
@@ -28,17 +28,23 @@
 			<div class="top_gnb_area">
 				<div class="container">
 					<div class="topBtnSort">
-						<div class=top_button>
-							<button type="button" class="btn btn-primary ">로그인</button>
-							<button type="button" class="btn btn-primary ">회원가입</button>
-							<button type="button" class="btn btn-primary ">고객센터</button>
+						<div class="top_button">
+							<a href="/MarketLogin">
+								<button type="button" class="btn btn-primary">로그인</button>
+							</a>
+							<a href="/MarketSignup">
+								<button type="button" class="btn btn-primary">회원가입</button>
+							</a>
+							<a href="#">
+								<button type="button" class="btn btn-primary">고객센터</button>
+							</a>
 						</div>
-
 					</div>
 				</div>
 				<div class="top_area">
 					<div class="logo_area">
-						<h1>웹사이트 이름</h1>
+						<a href="/Market"> <img src="/img/market/로고.jpg" width="100%" height="100%">
+						</a>
 					</div>
 					<div class="search_area">
 						<div class="container">
@@ -50,51 +56,51 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div class="login_area">
-                <div class="login_button"><a href="/member/login">로그인</a></div>
-                <span><a href="/member/join">회원가입</a></span>
-            </div> -->
+					<div class="login_area">
+						<div class="cart">
+							<a href="/MarketCart"> <img src="/img/market/장바구니카트.jpg" width="70px" height="70px">
+							</a>
+						</div>
+						<div class="loginIcon">
+							<a href="/MypageProductOrderList"> <img src="/img/market/프로필.jpg" width="70px"
+									height="70px">
+							</a>
+						</div>
+					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="navi_bar_area">
 					<ul class="menu">
-						<li><a href="#">MENU1</a>
+						<li><a href="#">신선식품</a>
 							<ul class="submenu">
-								<li><a href="#">submenu01</a></li>
-								<li><a href="#">submenu02</a></li>
-								<li><a href="#">submenu03</a></li>
-								<li><a href="#">submenu04</a></li>
-								<li><a href="#">submenu05</a></li>
+								<li><a href="/MarketProductFresh">과일</a></li>
+								<li><a href="#">채소</a></li>
+								<li><a href="#">곡류</a></li>
+								<li><a href="#">육류</a></li>
+								<li><a href="#">수산물</a></li>
 							</ul>
 						</li>
-						<li><a href="#">MENU2</a>
+						<li><a href="#">가공식품</a>
 							<ul class="submenu">
-								<li><a href="#">submenu01</a></li>
-								<li><a href="#">submenu02</a></li>
-								<li><a href="#">submenu03</a></li>
-								<li><a href="#">submenu04</a></li>
-								<li><a href="#">submenu05</a></li>
+								<li><a href="#">면/라면/통조림</a></li>
+								<li><a href="#">과자/시리얼/베이커리</a></li>
+								<li><a href="#">즉석밥/떡</a></li>
+								<li><a href="#">생수/음료/커피</a></li>
+								<li><a href="#">가루/조미료/오일</a></li>
+								<li><a href="#">장/양념/잼</a></li>
 							</ul>
 						</li>
-						<li><a href="#">MENU3</a>
+						<li><a href="#">간편식</a>
 							<ul class="submenu">
-								<li><a href="#">submenu01</a></li>
-								<li><a href="#">submenu02</a></li>
-								<li><a href="#">submenu03</a></li>
-								<li><a href="#">submenu04</a></li>
-								<li><a href="#">submenu05</a></li>
+								<li><a href="#">국/찌개/탕</a></li>
+								<li><a href="#">김치/젓갈/반찬</a></li>
+								<li><a href="#">밀키트</a></li>
+								<li><a href="#">냉동식품</a></li>
+								<li><a href="#">양념육/해물요리</a></li>
+								<li><a href="#">샐러드/도시락</a></li>
 							</ul>
 						</li>
-						<li><a href="#">MENU4</a>
-							<ul class="submenu">
-								<li><a href="#">submenu01</a></li>
-								<li><a href="#">submenu02</a></li>
-								<li><a href="#">submenu03</a></li>
-								<li><a href="#">submenu04</a></li>
-								<li><a href="#">submenu05</a></li>
-							</ul>
-						</li>
-						<li><a href="#">MENU5</a>
+						<li><a href="#">게시판</a>
 							<ul class="submenu">
 								<li><a href="#">submenu01</a></li>
 								<li><a href="#">submenu02</a></li>
@@ -133,10 +139,7 @@
 									<div class="product-details">
 										<h3 class="product-name">신선한 브로콜리</h3>
 										<p class="product-price">$9.99</p>
-										<div class="product-rating">
-											<div class="star-rating" style="--rating: 4;"></div>
-											<span class="rating-count">(10)</span>
-										</div>
+										
 										<button class="add-to-cart-btn">Add to Cart</button>
 									</div>
 								</li>
@@ -147,10 +150,7 @@
 									<div class="product-details">
 										<h3 class="product-name">Product 2</h3>
 										<p class="product-price">$19.99</p>
-										<div class="product-rating">
-											<div class="star-rating" style="--rating: 3.5;"></div>
-											<span class="rating-count">(5)</span>
-										</div>
+										
 										<button class="add-to-cart-btn">Add to Cart</button>
 									</div>
 								</li>
