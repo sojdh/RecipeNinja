@@ -22,6 +22,23 @@
 <link rel="stylesheet" href="css/manager/ManagerMain.css">
 <link rel="stylesheet" href="css/manager/Form.css">
 
+<!-- <script type="text/javascript">
+function insertMidCategory(f){
+	var top_ctgy_name = $("#top_ctgy_name").val();
+	console.log(top_ctgy_name)
+	f.action="InsertMidCategory"; 
+	f.submit();
+}
+</script> -->
+<script type="text/javascript">
+function insertMidCategory(button) {
+    var form = button.closest('form');
+    var top_ctgy_name = button.getAttribute('data-top-ctgy-name');
+    console.log(top_ctgy_name);
+    form.action = "InsertMidCategory?top_ctgy_name=" + top_ctgy_name;
+    form.submit();
+}
+</script>
 </head>
 
 <body> 
@@ -205,8 +222,8 @@
 											<col width="10%">
 											<col width="25%">
 											<col width="20%">
-											<col width="20%">
 											<col width="15%">
+											<col width="20%">
 										</colgroup>
 										<thead>
 											<tr>
@@ -214,39 +231,37 @@
 												<th>순서2</th>
 												<th>분류명</th>
 												<th>코드</th>
-												<th>등록일</th>
+												<th>진열상태</th>
 												<th>하위분류등록</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>
-													<input type="text" size="5" value="1" id="top_category">
-													<button type="button" class="btn btn-info btn-xs"
-													onclick="if(confirm('수정하시겠습니까?')) location.href='Catagory';">수정</button>
-												</td>
-												<td></td>
-												<td><a href="TopCategory">신선 식품</a></td>
-												<td><a href="TopCategory">001</a></td>
-												<td>2023-04-010 20:35:17</td>
-												<td>
-													<button type="button" class="btn btn-outline btn-primary btn-sm"
-													onclick="location.href='/InsertMidCategory'">중분류등록</button>
-												</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>
-													<input type="text" size="5" value="1" id="mid_category">
-													<button type="button" class="btn btn-info btn-xs"
-													onclick="if(confirm('수정하시겠습니까?')) location.href='Catagory';">수정</button>
-												</td>
-												<td><a href="MidCategory">과일</a></td>
-												<td><a href="MidCategory">001001</a></td>
-												<td>2023-04-010 20:35:17</td>
-												<td></td>
-											</tr>
-										</tbody>
+										    <tbody>
+										        <tr th:each="categoryTop, topNumber : ${categoryTopList}">
+										            <td th:text="${topNumber.count}"></td>
+										            <td></td>
+										            <td><a th:href="'Category?top_ctgy_name=' + ${categoryTop.top_ctgy_name}" th:text="${categoryTop.top_ctgy_name}"></a></td>
+										            <td><a th:href="'Category?top_ctgy_name=' + ${categoryTop.top_ctgy_name}" th:text="${categoryTop.top_ctgy_num}"></a></td>
+										            <td th:text="${categoryTop.top_ctgy_status}"></td>
+										            <td>
+										                <button type="button" class="btn btn-outline btn-primary b	tn-sm" th:data-top-ctgy-name="${categoryTop.top_ctgy_name}"
+										                 onclick="insertMidCategory(this)">
+										                    중분류등록
+										                </button>
+										                <input type="hidden" name="top_ctgy_name" id="top_ctgy_name" th:value="${categoryTop.top_ctgy_name}">
+										            </td>
+										            <!-- 중첩된 tr 태그 -->
+										            <tr th:each="categoryMid, midNumber : ${categoryMidList}">
+										                <td></td>
+										                <td th:text="${midNumber.count}"></td>
+										                <td><a th:href="'InsertMidCategory?mid_ctgy_name=' + ${categoryMid.mid_ctgy_name}" th:text="${categoryMid.mid_ctgy_name}"></a></td>
+										                <td><a th:href="'Category?mid_ctgy_num=' + ${categoryMid.mid_ctgy_num}" th:text="${categoryMid.mid_ctgy_num}"></a></td>
+										                <td th:text="${categoryMid.mid_ctgy_status}"></td>
+										                <td></td>
+										            </tr>
+										            <!-- 중첩된 tr 태그 끝 -->
+										        </tr>
+										    </tbody>
 									</table>
 								</div>
 							</form>

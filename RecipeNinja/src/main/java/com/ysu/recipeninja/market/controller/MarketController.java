@@ -10,28 +10,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 	@Controller
 	public class MarketController {
-		@RequestMapping("Market")
-		public ModelAndView market() {
-			return new ModelAndView("market/MarketMain");
+		
+		@GetMapping("/Market")
+		public String market() {
+			return "market/MarketMain";
+		}
+		@GetMapping("/ProductSubPage")
+		public String productsubpage() {
+			return "market/ProductSubPage";
+		}
+		@GetMapping("/MarketLogin")
+		public String marketLogin() {
+			return "market/MarketLogin";
+		}
+		@GetMapping("/MarketSignup")
+		public String marketSignup() {
+			return "market/MarketSignup";
+		}
 	
-	
-		}
-	@Controller
-	public class ProductSubPage{
-		@RequestMapping("ProductSubPage")
-		public ModelAndView productsubpage() {
-			return new ModelAndView("market/ProductSubPage");
-		}
-
-		@RequestMapping("MarketLogin")
-		public ModelAndView marketLogin() {
-			return new ModelAndView("market/MarketLogin");
-		}
-		@RequestMapping("MarketSignup")
-		public ModelAndView marketSignup() {
-			return new ModelAndView("market/MarketSignup");
-		}
-
-	
-}
 }

@@ -3,7 +3,134 @@
 
 <mapper namespace="manager"> 
 <!-- 쿼리 호출 id /  -->
-  <select id="getManagerID" resultType="int" parameterType="com.ysu.recipeninja.manager.model.vo.Members_VO">
+  <select id="getManagerID" resultType="int" parameterType="MAP">
     SELECT COUNT(*) FROM MANAGER WHERE manager_id=#{manager_id} AND manager_password=#{manager_password}
   </select>
+  <update id="cnt" parameterType="com.ysu.recipeninja.manager.model.vo.Manager_VO">
+  	UPDATE `manager` 
+  	SET manager_login_cnt = manager_login_cnt + 1,
+		manager_login_date = now()
+  	WHERE manager_id = #{manager_id}
+  </update>
+  
+<!-- 관리자 정보 -->
+	<select id="getManagerData" resultType="com.ysu.recipeninja.manager.model.vo.Manager_VO" parameterType="String">
+		SELECT * FROM manager WHERE manager_id = #{manager_id}
+	</select>
+  
+
+<!-- MemberList 데이터 -->
+  <select id="getMemberList" resultType="com.ysu.recipeninja.manager.model.vo.Member_VO">
+  	SELECT M.MEMBER_ID, M.MEMBER_NAME, M.MEMBER_PHONENUM, P.POINT, MR.RATING, M.MEMBER_JOIN_DATE
+	FROM `member` M
+	LEFT JOIN `point` P
+	ON M.MEMBER_ID = P.MEMBER_ID
+	LEFT JOIN `member_rank` MR
+	ON M.MEMBER_ID = MR.MEMBER_ID
+	ORDER BY MEMBER_JOIN_DATE DESC
+  </select>
+  
+<!-- Member 데이터 -->
+	<select id="getMemberData" resultType="com.ysu.recipeninja.manager.model.vo.Member_VO" parameterType="String">
+		SELECT * 
+		FROM `member` M
+		LEFT JOIN `point` P
+		ON M.MEMBER_ID = P.MEMBER_ID
+		LEFT JOIN `member_rank` MR
+		ON M.MEMBER_ID = MR.MEMBER_ID
+		WHERE M.MEMBER_ID = #{member_id}
+	</select>
+	
+<!-- Member Update -->
+	<update id="MemberUpdate" parameterType="com.ysu.recipeninja.manager.model.vo.Member_VO" >
+		UPDATE `member` M
+		LEFT JOIN `point` P
+		ON M.member_id = P.member_id
+		LEFT JOIN `member_rank` MR
+		ON M.member_id = MR.member_id
+		SET M.member_password = #{member_password}, 
+		M.member_name = #{member_name}, 
+		M.member_nickname = #{member_nickname}, 
+		M.member_phonenum = #{member_phonenum}, 
+		P.point = #{point}, 
+		MR.rating = #{rating}
+		WHERE M.MEMBER_ID = #{member_id}
+	</update>
+	
+<!-- Member Delete -->
+	<delete id="PointDelete" parameterType="com.ysu.recipeninja.manager.model.vo.Member_VO">
+		DELETE FROM POINT WHERE member_id = #{member_id}
+	</delete>
+	<delete id="MemberRankDelete" parameterType="com.ysu.recipeninja.manager.model.vo.Member_VO">
+		DELETE FROM MEMBER_RANK WHERE member_id = #{member_id}
+	</delete>
+	<delete id="MemberDelete" parameterType="com.ysu.recipeninja.manager.model.vo.Member_VO">
+		DELETE FROM MEMBER WHERE member_id = #{member_id}
+	</delete>
+	
+<!-- Insert Banner -->
+	<insert id="insertBanner" parameterType="com.ysu.recipeninja.manager.model.vo.Banner_VO">
+		INSERT INTO `banner`(banner_img, banner_state, banner_link)
+		VALUES(#{banner_img}, #{banner_state},#{banner_link})
+	</insert>
+	
+<!-- Banner List 배너 메인 -->
+	<select id="getBannerList" resultType="com.ysu.recipeninja.manager.model.vo.Banner_VO">
+		SELECT * FROM BANNER
+		ORDER BY banner DESC
+	</select>
+
+<!-- Banner Data -->
+	<select id="getBannerData" resultType="com.ysu.recipeninja.manager.model.vo.Banner_VO" parameterType="String">
+		SELECT * 
+		FROM BANNER
+		WHERE banner = #{banner}
+	</select>
+	
+<!-- Banner Update -->
+	<update id="bannerUpdate" parameterType="com.ysu.recipeninja.manager.model.vo.Banner_VO">
+	    UPDATE `banner`
+	    SET banner_img = #{banner_img},
+	        banner_link = #{banner_link},
+	        banner_state = #{banner_state}
+	    WHERE banner = #{banner};
+	</update>
+	
+<!-- Banner Delete -->
+	<delete id="bannerDelete" parameterType="com.ysu.recipeninja.manager.model.vo.Banner_VO">
+		DELETE FROM `banner`
+		WHERE banner = #{banner};
+	</delete>
+	
+<!-- TOP Category Insert -->	
+	<insert id="insertTopCategory" parameterType="com.ysu.recipeninja.manager.model.vo.CategoryTop_VO">
+		INSERT INTO `category_top` (top_ctgy_name, top_ctgy_status, top_ctgy_num)
+		VALUES(#{top_ctgy_name}, #{top_ctgy_status}, #{top_ctgy_num})
+	</insert>
+
+<!-- TOP Category MAX NUM -->
+	<select id="topNum" resultType="com.ysu.recipeninja.manager.model.vo.CategoryTop_VO">
+		SELECT max(TOP_CTGY_NUM) AS 'top_ctgy_num' FROM category_top
+	</select>
+
+<!-- TOP Category List -->
+	<select id="categoryTopList" resultType="com.ysu.recipeninja.manager.model.vo.CategoryTop_VO">
+		SELECT * 
+		FROM category_top
+		ORDER BY top_ctgy_num
+	</select>
+	
+<!-- Mid Category List -->
+	<select id="categoryMidList" resultType="com.ysu.recipeninja.manager.model.vo.CategoryMid_VO">
+		SELECT * 
+		FROM category_mid
+		ORDER BY mid_ctgy_num
+	</select>
+	
+<!-- Mid category data -->
+	<select id="categoryMidData" resultType="com.ysu.recipeninja.manager.model.vo.CategoryMid_VO" parameterType="String">
+		SELECT *
+		FROM category_mid
+		WHERE top_ctgy_name = #{top_ctgy_name}
+	</select>
 </mapper>
