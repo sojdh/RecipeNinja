@@ -201,54 +201,18 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>10</td>
+											<tr th:each="banner, index : ${bannerList}">
+												<td th:text="${bannerList.size()-index.index}"></td>
 												<td>
 												<div class="col-lg-10">
-													<a class="thumbail" href="Banner">
-														<img src="img/carrot.jpeg">
+													<a class="thumbail" th:href="@{'Banner?banner=' + ${banner.banner}}">
+														<img th:src="@{'/img/banner/' + ${banner.banner_img}}">
 													</a>
 												</div>
 												</td>
-												<td>http://www.naver.com(이벤트 페이지)</td>
+												<td th:text="${banner.banner_link}"></td>
 												<td>
-													<p>사용 여부에 따라 바뀌게 </p>
-												</td>
-												<td>
-													<a href="">▲</a>
-													<a href="">▼</a>
-												</td>
-											</tr>
-											<tr>
-												<td>10</td>
-												<td>
-												<div class="col-lg-10">
-													<a class="thumbail" href="Banner">
-														<img src="img/carrot.jpeg">
-													</a>
-												</div>
-												</td>
-												<td>http://www.naver.com(이벤트 페이지)</td>
-												<td>
-													<p>사용 여부에 따라 바뀌게 </p>
-												</td>
-												<td>
-													<a href="">▲</a>
-													<a href="">▼</a>
-												</td>
-											</tr>
-											<tr>
-												<td>10</td>
-												<td>
-												<div class="col-lg-10">
-													<a class="thumbail" href="Banner">
-														<img src="img/carrot.jpeg">
-													</a>
-												</div>
-												</td>
-												<td>http://www.naver.com(이벤트 페이지)</td>
-												<td>
-													<p>사용 여부에 따라 바뀌게 </p>
+													<p th:text="${banner.banner_state}"></p>
 												</td>
 												<td>
 													<a href="">▲</a>

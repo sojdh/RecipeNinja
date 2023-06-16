@@ -22,6 +22,29 @@
 <link rel="stylesheet" href="css/manager/ManagerMain.css">
 <link rel="stylesheet" href="css/manager/Form.css">
 
+<script type="text/javascript">
+
+function banner_update(f){	
+	var banner_link =$("#banner_link").val().trim();
+	var banner_state =$("#banner_state").val().trim();
+	
+	if(banner_link=="" || banner_state==""){
+		alert("빈칸의 정보를 입력해주세요.")
+	}else{
+		f.action="BannerUpdate"; 
+		f.submit();
+	}
+}
+
+function banner_delete(f){
+	if(confirm('삭제 하시겠습니까?')){
+		f.action="BannerDelete";
+		f.submit();
+	}
+}
+
+</script>
+
 </head>
 
 <body> 
@@ -178,45 +201,48 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-							<form role="form" name="f" method="get" action="/admin/main.php">
+							<form role="form" name="f" method="post" action="/admin/main.php" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>이미지</label>
 									<div class="row">
 										<div class="col-xs-6 col-md-4">
 											<div class="thumbail">
-												<img src="img/carrot.jpeg">
+												<img th:src="@{/img/banner/__${bannerData.banner_img}__}" >
+												<input type="hidden" name="banner_img_old" id="banner_img_old" th:value="${bannerData.banner_img}">
 											</div>
 										</div>
-										<input type="hidden" name="tmp_img" value="img/carrot.jpeg">
-										<input type="file" name="img">
+										<input type="hidden" name="banner" th:value="${bannerData.banner}">
+										<input type="file" name="banner_img_param" id="banner_img_param" class="{label:'이미지', required:true}">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="event_link">링크</label>
-									<input type="text" class="form-control" id="event_link"
-									name="event_link" placeholder="링크" value="http://naver.com">
+									<input type="text" class="form-control" id="banner_link"
+									name="banner_link" placeholder="링크" th:value="${bannerData.banner_link}">
 								</div>
 								<div class="form-group">
 									<label>사용 여부</label>
 									<div class="radio">
 										<label>
-											<input type="radio" name="published" value="Y" checked>
+											<input type="radio" name="banner_state" id="banner_state" 
+											value="Y" th:checked="${bannerData.banner_state == 'Y'}">
 											예
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="published" value="N">
+											<input type="radio" name="banner_state" id="banner_state" 
+											value="N" th:checked="${bannerData.banner_state == 'N'}">
 											아니요
 										</label>
 									</div>
 								</div>
-								<button type="submit" class="btn btn-outline btn-success"
-								onclick="location.href='/BannerMain'">수정</button>
+								<button type="button" class="btn btn-outline btn-success"
+								onclick="banner_update(this.form)">수정</button>
 								<button type="button" class="btn btn-outline btn-info" 
 								onclick="location.href='/BannerMain'">목록</button>
 								<button type="button" class="btn btn-outline btn-danger" 
-								onclick="if(confirm('삭제 하시겠습니까?')) location.href='MemberMain';">삭제</button>
+								onclick="banner_delete(this.form)">삭제</button>
 							</form>
                         </div>
                     </div>
