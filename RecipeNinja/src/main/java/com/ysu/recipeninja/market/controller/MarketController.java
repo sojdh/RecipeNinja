@@ -1,48 +1,60 @@
 package com.ysu.recipeninja.market.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.method.support.ModelAndViewContainer;
-import org.springframework.web.servlet.ModelAndView;
 
-	@Controller
-	public class MarketController {
-		@RequestMapping("Market")
-		public ModelAndView market() {
-			return new ModelAndView("market/MarketMain");
-	
-	
-		}
-	@Controller
-	public class ProductSubPage{
-		@RequestMapping("ProductSubPage")
-		public ModelAndView productsubpage() {
-			return new ModelAndView("market/ProductSubPage");
-		}
+import com.ysu.recipeninja.market.model.service.Market_Service;
+import com.ysu.recipeninja.market.model.vo.Market_VO;
 
-		@RequestMapping("MarketLogin")
-		public ModelAndView marketLogin() {
-			return new ModelAndView("market/MarketLogin");
-		}
-		@RequestMapping("MarketSignup")
-		public ModelAndView marketSignup() {
-			return new ModelAndView("market/MarketSignup");
-		}
+@Controller
+public class MarketController {
+	private Market_Service market_Service;
 
+	@Autowired
+	public void setMarket_service(Market_Service market_Service) {
+		this.market_Service = market_Service;
+	}
 
-		@RequestMapping("MarketProductFresh")
-		public ModelAndView marketProductFresh() {
-			return new ModelAndView("market/MarketProductFresh");
-		}
-		@RequestMapping("MarketOrderPayment")
-		public ModelAndView marketOrderPayment() {
-			return new ModelAndView("market/MarketOrderPayment");
-		}
+	@GetMapping("/Market")
+    public String market(Model model) {
+        Market_VO banner = market_Service.getBannerByBanner("1");  // assuming you want to fetch the banner with ID 1
+        model.addAttribute("banner", banner);
+        return "market/MarketMain";  // return to market.html
+    }
 
+	@GetMapping("/ProductSubPage")
+	public String ProductSubPage() {
+		return "market/ProductSubPage";
+	}
 
+	@GetMapping("/MarketLogin")
+	public String MarketLogin() {
+		return "market/MarketLogin";
+	}
 
-}
+	@GetMapping("/MarketSignup")
+	public String MarketSignup() {
+		return "market/MarketSignup";
+	}
+
+	@GetMapping("/MarketProductFresh")
+	public String MarketProductFresh() {
+		return "market/MarketProductFresh";
+	}
+
+	@GetMapping("/MarketOrderPayment")
+	public String MarketOrderPayment() {
+		return "market/MarketOrderPayment";
+	}
+
+	@GetMapping("/MarketCart")
+	public String MarketCart() {
+		return "market/MarketCart";
+	}
+
 }

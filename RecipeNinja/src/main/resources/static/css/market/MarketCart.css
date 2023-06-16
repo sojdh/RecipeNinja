@@ -4,7 +4,10 @@
 }
 
 /* 화면 전체 렙 */
-.wrapper {}
+.wrapper {
+	align-items: center;
+	height: 100vh;
+}
 
 #toMenu {
 	height: 30px;
@@ -41,8 +44,7 @@
 .top_gnb_area {
 	width: 100%;
 	height: 50px;
-	background-color: rgb(255, 255, 255);
-
+	background-color: #a2a2ea;
 }
 
 
@@ -50,15 +52,14 @@
 .top_area {
 	width: 100%;
 	height: 150px;
-	background-color: rgb(255, 255, 255);
-	border: 3px solid #ccc;
+	background-color: #f7f0b9;
 }
 
 /* 로고 영역 */
 .logo_area {
 	width: 25%;
 	height: 100%;
-	border: 3px solid #ccc;
+	background-color: red;
 	float: left;
 }
 
@@ -66,27 +67,17 @@
 .search_area {
 	width: 50%;
 	height: 100%;
-	background-color: rgb(255, 255, 255);
+	background-color: yellow;
 	float: left;
 	text-align: center;
-	border-width: 5px;
-	border-style: groove;
 }
 
 /* 로그인 버튼 영역 */
 .login_area {
 	width: 25%;
 	height: 100%;
-	display: flex;
-	padding: 10px;
+	display: inline-block;
 	text-align: center;
-	align-items: center;
-}
-
-.cart,
-.loginIcon {
-	margin: 25px;
-
 }
 
 .login_button {
@@ -112,8 +103,13 @@
 	margin-top: 30px;
 }
 
+.top_button {
+	position: relative;
+	left: 70%;
+}
+
 .topInput {
-	width: 90%;
+	width: 300px;
 	height: 50px;
 	margin-top: 70px;
 }
@@ -130,11 +126,13 @@
 /* 홈페이지 메인 제품 목록  */
 .content_area {
 	width: 100%;
-	background-color: rgb(255, 255, 255);
-	border-left: 3px solid #ccc;
-	border-right: 3px solid #ccc;
-	height: 1200px;
-	float: left;
+	height: 1100px;
+}
+
+.container {
+	/* or any other desired width */
+	margin: 0 auto;
+	/* centers the container horizontally */
 }
 
 /* float 속성 해제 */
@@ -189,10 +187,12 @@
 }
 
 #footer {
+	border-top: #ddd solid 2px;
 	width: 100%;
-	height: 140px;
+	height: 200px;
 	background-color: #c0bfc8;
 	float: left;
+	margin-top: 200px;
 }
 
 #footer ul {
@@ -200,97 +200,90 @@
 }
 
 #footer li {
-	margin: 5px;
+	margin: 10px;
 }
 
-.top_button {
-	position: relative;
-	left: 70%;
+.cart-container {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ddd;
 }
 
-.searchBar_Btn {
-	position: relative;
-	right: 30px;
-}
-
-.s_contents {
-	width: 100%;
-	margin: 0 auto;
-	position: relative;
-	padding: 0;
-}
-
-.sub_tit {
-	padding: 60px 0 50px 0;
-	text-align: center;
-	line-height: 1;
-}
-
-.sub_tit_m {
-	margin-top: 20px;
-	font-size: 36px;
-	font-weight: 600;
-}
-
-.cate_2depth_area {
-	border-top: 1px solid #ebebeb;
-	border-bottom: 2px solid #2b2f3a;
+.cart-items {
 	margin-bottom: 20px;
 }
 
-.cate_2depth_area ul {
-	display: flex;
-	flex-wrap: wrap;
+table {
 	width: 100%;
-	text-align: center;
-	padding: 8px 0;
+	border-collapse: collapse;
 }
 
-.cate_2depth_area ul li {
-	position: relative;
-	width: 11.1%;
-	list-style: none;
-}
-
-.cate_2depth_area ul li a {
-	color: #000;
-	font-size: 25px;
-	margin: 12px 0;
-	padding: 10px 0;
-	display: block;
-}
-
-.product-list {
-	display: flex;
-	flex-wrap: wrap;
-	margin: -10px;
-
-}
-
-.product-item {
-	flex: 1 1 calc(33.33% - 20px);
-	margin: 10px;
-	background-color: #f9f9f9;
+thead th,
+tbody td {
 	border: 1px solid #ddd;
-	padding: 20px;
-	list-style: none;
+	padding: 10px;
+	text-align: center;
 }
 
-.product-image img {
-	max-width: 100%;
-	height: auto;
+thead th:first-child,
+tbody td:first-child {
+	width: 5%;
 }
 
-.product-name {
-	font-size: 1.2rem;
-	margin: 10px
+thead th:nth-child(2),
+tbody td:nth-child(2) {
+	width: 20%;
 }
 
-.product-price {
+thead th:nth-child(3),
+tbody td:nth-child(3) {
+	width: 35%;
+}
+
+thead th:nth-child(4),
+tbody td:nth-child(4) {
+	width: 15%;
+}
+
+thead th:nth-child(5),
+tbody td:nth-child(5) {
+	width: 10%;
+}
+
+thead th:nth-child(6),
+tbody td:nth-child(6) {
+	width: 15%;
+}
+
+tfoot td {
+	text-align: right;
+	padding-top: 10px;
 	font-weight: bold;
-	margin: 10px;
 }
 
-.add-to-cart-btn {
-	margin: 10px;
+#select-all-btn,
+#delete-btn,
+#order-btn {
+	display: inline-block;
+	margin-right: 10px;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+#select-all-btn:hover,
+#delete-btn:hover,
+#order-btn:hover {
+	background-color: #3e8e41;
+}
+
+#check-all,
+.item-check {
+	cursor: pointer;
+}
+
+.item-check:checked {
+	background-color: #eee;
 }
